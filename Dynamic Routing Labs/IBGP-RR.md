@@ -4,4 +4,4 @@ In this Lab we are displaying the use case for RR within the same AS (IBGP Peers
 
 The reason Route Reflection is required is because IBGP neighbors will not advertise a network received from one IBGP neighbor to another IBGP neighbor.
 
-![Routing Diagram](./images/test.png)
+![Routing Diagram](./Images/test.png)
