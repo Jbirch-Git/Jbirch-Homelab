@@ -19,27 +19,27 @@ We are going to connect R1, R2 and R3 in the following topology.
 - The Networks used will be 10.X.0.0/24. X will be the combined number of the router numbers. R1,R2 = 10.12.0.0/24 etc. 
 - We will also have a loopback on each router based on their router number that we will be advertising over BGP Ex: R1 = 1.1.1.1.
 
-R1 = 10.12.0.1, 10.13.0.1
-R2 = 10.12.0.2
-R3 = 10.13.0.2
+R1 = 10.12.0.1, 10.13.0.1  
+R2 = 10.12.0.2  
+R3 = 10.13.0.2  
 
 Let's start with making a basic IBGP peer between R1 and R2.
 
 R1:
-conf t
-router bgp 65545
-neighbor 10.12.0.2 remote-as 65545
-neighbor 10.12.0.2 activate
-address-family ipv4 unicast
-network 1.1.1.0 mask 255.255.255.0
+conf t  
+router bgp 65545  
+neighbor 10.12.0.2 remote-as 65545  
+neighbor 10.12.0.2 activate  
+address-family ipv4 unicast  
+network 1.1.1.0 mask 255.255.255.0  
 
 R2:
-conf t
-router bgp 65545
-neighbor 10.12.0.1 remote-as 65545
-neighbor 10.12.0.1 activate
-address-family ipv4 unicast
-network 2.2.2.0 mask 255.255.255.0
+conf t  
+router bgp 65545  
+neighbor 10.12.0.1 remote-as 65545  
+neighbor 10.12.0.1 activate  
+address-family ipv4 unicast  
+network 2.2.2.0 mask 255.255.255.0  
 
 Follow these same steps on R1 to R3.
 
@@ -55,11 +55,11 @@ As you can see the loopbacks advertise from R2 and R3 into R1 but R1 does not re
 To resolve this route propagation issue we will enable Route-Reflection.
 
 R1:
-conf t
-router bgp 65545
-address-family ipv4 unicast
-neighbor 10.12.0.2 route-reflector-client
-neighbor 10.13.0.2 route-reflector-client
+conf t  
+router bgp 65545  
+address-family ipv4 unicast  
+neighbor 10.12.0.2 route-reflector-client  
+neighbor 10.13.0.2 route-reflector-client  
 
 Now lets take a look at the routing table on R2 and R3.
 
@@ -71,11 +71,11 @@ We can see the route is now in the BGP table but is not being installed into the
 The solution in this hub and spoke topology is to enable next-hop-self from the hub router (R1) so that the next hop is in a network that can be reached from those spoke routers.
 
 R1: 
-conf t
-router bgp 65545
-address-family ipv4 unicast
-neighbor 10.12.0.2 next-hop-self all
-neighbor 10.13.0.2 next-hop-self all
+conf t  
+router bgp 65545  
+address-family ipv4 unicast  
+neighbor 10.12.0.2 next-hop-self all  
+neighbor 10.13.0.2 next-hop-self all  
 
 (The "all" notation in the next-hop-self command is very important here. This indicates that it will apply to both EBGP routes and IBGP routes. If you do not select all in the command it will only apply to EBGP routes.)
 
