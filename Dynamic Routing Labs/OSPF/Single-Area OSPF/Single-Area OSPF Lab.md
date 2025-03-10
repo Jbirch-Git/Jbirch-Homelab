@@ -60,7 +60,7 @@ By default this reference bandwidth it 100 mbps when you create the OSPF process
 
 To change this we will run the following on all routers.
 
-R1:
+R1:  
 conf t  
 router ospf 1  
 auto-cost Reference-bandwidth 1000  
