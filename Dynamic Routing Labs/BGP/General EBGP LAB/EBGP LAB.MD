@@ -78,7 +78,7 @@ router bgp 65547
 address-family ipv4 unicast  
 neighbor 10.34.0.2 next-hop-self all  
 
-Exit then run a bgp clear (clear ip bgp * soft
+Exit then run a bgp clear (clear ip bgp * soft)
 
 Now we look at R4's routing table once more.
 
