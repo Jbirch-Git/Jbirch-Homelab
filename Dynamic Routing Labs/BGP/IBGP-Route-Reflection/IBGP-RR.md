@@ -2,8 +2,7 @@
 
 In this Lab we are displaying the use case for RR within the same AS (IBGP Peers) to avoid having to create a full mesh IBGP neighbor configuration.
 
-The reason Route Reflection is required is because IBGP neighborships do not propagate received routes like EBGP peers do.
-
+The reason Route Reflection is required is because IBGP neighborships do not propagate other IBGP received routes to IBGP peers.
 
 
 Assets in the Lab:
