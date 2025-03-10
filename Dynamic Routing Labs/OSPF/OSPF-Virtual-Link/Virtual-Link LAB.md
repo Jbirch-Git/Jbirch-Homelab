@@ -6,7 +6,7 @@ Assets in the topology:
 
 R1,R2,R3
 
-- The Networks used will be 192.168.0.0/24 between R1 and R2. Between R2 and R3 will be 192.168.1.0/24. There will also a 10 network one within area 0 and another in Area 2 which will be what we are trying to connect over the virtual link.
+- The Networks used will be 192.168.0.0/24 between R1 and R2. Between R2 and R3 will be 192.168.1.0/24. There will also be 10 networks, one within area 0 and another in Area 2 which will be what we are trying to connect over the virtual link.
 - We will also have a loopback on each router based on their router number that will be used as their router-ID. EX: R1= 1.1.1.1
 
 ![Topology](Images/Topology.png)
