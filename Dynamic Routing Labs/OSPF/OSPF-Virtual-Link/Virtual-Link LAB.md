@@ -64,7 +64,7 @@ Let's now check the neighbor tables.
 
 ![R3-Neighbor-R1](Images/R3-Neighbor-R1.png)
 
-We can see the Virtual link ID of VL1 is used on R3, then following that checking the OSPF neighbors you can now see 1.1.1.1 is a neighbor. Important things to note from this show command are the cost as well as see how the network type is a Point to point network type.
+We can see the Virtual link ID of VL1 is used on R3, then following that checking the OSPF neighbors you can now see 1.1.1.1 is a neighbor. Important things to note from this are the cost as well as see how the network type is a Point to point network type. This means there is no DR or BDR election that happens on this network segment.
 
 Let's check the ospf database and Routing table.
 
