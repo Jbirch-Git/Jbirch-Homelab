@@ -56,7 +56,7 @@ If you look closely at the Routing table we can see the cost metric beside the A
 
 ![Reference-bandwidth](Images/Reference-bandwidth.png)
 
-By default this reference bandwidth it 100 mbps when you create the OSPF process. This can be problematic if there is both Fast ethernet and Gigabit ethernet interfaces they will be equal costs.
+By default this reference bandwidth it 100 mbps when you create the OSPF process. This can be problematic if there is both Fast ethernet and Gigabit ethernet interfaces in the environment, they will be equal costs! When they are definitely not equal in throughput.
 
 To change this we will run the following on all routers.
 
@@ -75,3 +75,4 @@ As a demo I have turned R1's interface into a Fast ethernet link. Take a look at
 
 You can now see that the metric is 11 (10 + 1 for the interface attached to the other routers)
 
+Now that reference bandwidth is resolved there is one more 
