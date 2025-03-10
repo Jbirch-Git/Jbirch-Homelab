@@ -88,7 +88,7 @@ Now we look at R4's routing table once more.
 
 Let's run another ping.
 
-![R5-Traceroute-R4-S](Images/R5-Traceroute-R4-S.png)
+![R5-Ping-R4-S](Images/R5-Ping-R4-S.png)
 
 Success.
 
