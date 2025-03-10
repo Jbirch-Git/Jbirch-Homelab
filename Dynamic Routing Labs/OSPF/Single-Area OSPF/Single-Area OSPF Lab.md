@@ -81,9 +81,9 @@ Now that reference bandwidth is resolved there is one more important change that
 
 # Influencing the DR/BDR Election
 
-That is due to this being a broadcast network type a DR and BDR election will happen. By default it goes by highest priority, then loopback IP, then highest interface IP. Since R3 has the highest it is the DR for the segment. R2 is the BDR.
+Due to this being a broadcast network type a DR and BDR router will be elected. By default it goes by highest priority, then loopback IP, then highest interface IP. Since R3 has the highest loopback it is the DR for the segment. R2 is the BDR.
 
-But take into account that maybe R1 is meant to be the DR for the segment as its the highest model with the most resources. How can we influence this election.
+On the other hand its possible R1 is meant to be the DR for the segment as its the highest model with the most resources. How can we influence this election?
 
 Let's influence the DR election to make R1 the DR for the segment as its neither DR or BDR at the moment.
 
