@@ -31,7 +31,7 @@ R3:
 conf t  
 router ospf 1  
 network 3.3.3.0 0.0.0.255 area 2   
-network 192.168.1.0 0.0.0.255 area 1
+network 192.168.1.0 0.0.0.255 area 1  
 network 10.1.0.0 0.0.0.255 area 2  
 
 Let's check the neighborship status.
