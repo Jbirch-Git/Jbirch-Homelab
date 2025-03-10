@@ -57,7 +57,7 @@ Let's now try a ping to the R4 router which is under the same AS as R3.
 
 ![R5-Traceroute-R4-F](Images/R5-Traceroute-R4-F.png)
 
-As we can see the traceroute fails after the R3 route. Let's have a look on R4 and see why.
+As we can see the traceroute fails after the R3 router. Let's have a look on R4 and see why.
 
 ![R4-Route-Table](Images/R4-Route-Table.png)
 
