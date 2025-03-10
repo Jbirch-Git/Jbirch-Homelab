@@ -37,3 +37,7 @@ This action will re-disable the interface when it sees in the log the state was 
 ![int-disable](Images/int-disable.png)
 
 As you can see once the interface was placed into a up state the EEM applet ran and re-disabled the interface.
+
+In the running configuration your EEM applet will look like the following.
+
+![EEM-Config](Images/EEM-Config.png)
