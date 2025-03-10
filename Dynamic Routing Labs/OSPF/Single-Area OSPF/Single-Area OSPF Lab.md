@@ -52,6 +52,8 @@ Both 2.2.2.2 and 3.3.3.3 are in the routing table.
 
 It is also reachable from R1.
 
+# OSPF Reference-Bandwidth
+
 If you look closely at the Routing table we can see the cost metric beside the AD. This Metric has been determined to be 2 as OSPF uses the reference bandwidth divided by the Interface bandwidth to find the cost.
 
 ![Reference-bandwidth](Images/Reference-bandwidth.png)
@@ -75,4 +77,26 @@ As a demo I have turned R1's interface into a Fast ethernet link. Take a look at
 
 You can now see that the metric is 11 (10 + 1 for the interface attached to the other routers)
 
-Now that reference bandwidth is resolved there is one more 
+Now that reference bandwidth is resolved there is one more important change that should be done within the area.
+
+# Influencing the DR/BDR Election
+
+That is due to this being a broadcast network type a DR and BDR election will happen. By default it goes by highest priority, then loopback IP, then highest interface IP. Since R3 has the highest it is the DR for the segment. R2 is the BDR.
+
+But take into account that maybe R1 is meant to be the DR for the segment as its the highest model with the most resources. How can we influence this election.
+
+Let's influence the DR election to make R1 the DR for the segment as its neither DR or BDR at the moment.
+
+On R1 run the following commands:
+
+R1:  
+conf t  
+interface gi0/0  
+ip ospf priority 255
+
+Then I set a priority of 200 on R2 to show the priority effect a second time as normally R3 would be the BDR as it has the highest loopback but in this example R2 should be the BDR
+
+![R1-DR](Images/R1-DR.png)
+
+This is best displayed from R3. If you look at the neighbor table you can see R1 is the DR with a pri of 255 and R2 is the BDR with a priority of 200. DR and BDR has no effect on routing decisions but helps to reduce broadcasts of LSA type 2's inside of a broadcast network type. Only the DR advertises the Type 2 LSA's to the network segment reducing overhead from all the routers speaking on the network individually.
+
