@@ -38,7 +38,7 @@ Let's take a look back on the OSPF database on R2 as well as R4.
 
 We can see the Type 5 LSA in the database with the advertising router as 2.2.2.2. Now for R4.
 
-![R2-T5-4](Images/R2-T5-4.PNG)
+![R4-T5-4](Images/R4-T5-4.PNG)
 
 We can see the same Type 5 LSA on R4 but the advertising router is still 2.2.2.2 even though its crossed through an area. If you go back to the multi-area lab I demo'd we can see that the ABR is the adv router normally for Type 3 LSA's. This is not the case for Type 5 LSA's.
 
