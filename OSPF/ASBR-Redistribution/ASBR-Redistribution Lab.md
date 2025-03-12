@@ -104,7 +104,7 @@ Success!
 That concludes the Lab for OSPF ASBR route redistribution as well as route filtering using a prefix-list. 
 
 # Extra!  
-# Making an access-list
+# Using Access-lists for filtering
 
 I have tested filtering using access-lists before if you are more comfortable with those they are close to the same but in your access list you will want to do the following.
 
