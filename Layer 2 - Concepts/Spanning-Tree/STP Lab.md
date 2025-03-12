@@ -70,7 +70,7 @@ If we look back at the topology since the priority and the cost are the same it 
 
 ![SW4-Blocking](Images/SW4-Blocking.png)
 
-Lets confirm in the STP table.
+Lets confirm in the STP table of SW4 that the port is in a blocking state.
 
 ![SW4-STP](Images/SW4-STP.png)
 
