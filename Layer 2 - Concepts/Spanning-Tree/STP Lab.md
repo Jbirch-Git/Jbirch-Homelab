@@ -62,11 +62,11 @@ Next lets determine the Designated ports. This one is easy, on the Root Bridge a
 
 BUT WAIT! They can't all be Designated ports can they now... SW2 and SW4 have a conflict both cant be designated or else they will be forwarding and there would be a loop. One switch has to set their link to blocking.
 
-In this case its a simple choice. SW4 is closer to the root with a lower root cost as it only has to traverse one link but SW2 has to traverse both the link to SW and then to the root which makes it the least preferred of the two.
+In this case its a simple choice. SW4 is closer to the root with a lower root cost as it only has to traverse one link but SW2 has to traverse both the link to SW4 and then to the root which makes it the least preferred of the two.
 
 Lets change things and connect SW3 and SW4 together. Both switches are 1 link away from the root. What happens to the link between the two of them?
 
-If we look back at the topology since the priority and the cost are the same it will be up to the lowest MAC. in this case SW3 will be designated and SW4 will be blocking on that link.
+If we look back at the topology since the priority and the cost are the same it will be up to the lowest MAC. in this case SW3 has the lower MAC address and therefor will be the designated port on that segment.
 
 ![SW4-Blocking](Images/SW4-Blocking.png)
 
