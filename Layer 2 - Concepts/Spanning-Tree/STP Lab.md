@@ -78,7 +78,7 @@ As expected E0/2 is in a blocking state.
 
 # Creating Multiple MST instances
 
-Next I will create multiple MST instances and map vlan 10 to instance 1. We will also be changing to root bridge for instance 1 which will demo how you can logically utilize all links by having some links up for certain vlans but down for others based on the instance and the Root ID.
+Next I will create multiple MST instances and map vlan 10 to instance 1. We will also be changing to root bridge for instance 1 which will demo how you can logically utilize all links by having some links up for certain vlans but down for others based on the instance and the Root for that instance.
 
 On the switches we will run the following
 
@@ -91,6 +91,8 @@ exit
 spanning-tree mst configuration  
 instance 1 vlan 10  
 exit  
+
+(Also make sure the ports between the switches are trunks so they can carry both vlan 1 and 10)
 
 We will also make SW2 the root bridge using the following command.
 
