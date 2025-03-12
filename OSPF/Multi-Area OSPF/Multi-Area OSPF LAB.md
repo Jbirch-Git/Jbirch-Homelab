@@ -8,7 +8,7 @@ R1,R2,R3,R4
 
 Topology for the Lab:
 
-![Topology](Images/Topology.png)
+![Topology](Images/Topology.PNG)
 
 To shorten the document I will only include the OSPF configuration but the link configuration is available in the Router Configuration folder.
 
