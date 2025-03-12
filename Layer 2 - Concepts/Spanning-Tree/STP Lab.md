@@ -56,4 +56,58 @@ Based on that information we get the following Root ports.
 
 ![Root-Port-Calculation](Images/Root-Port-Calculation.png)
 
+Next lets determine the Designated ports. This one is easy, on the Root Bridge all ports are designated. on all other switches all non root ports are designated ports.
+
+![Desg-Port](Images/Desg-Port.png)
+
+BUT WAIT! They can't all be Designated ports can they now... SW2 and SW4 have a conflict both cant be designated or else they will be forwarding and there would be a loop. One switch has to set their link to blocking.
+
+In this case its a simple choice. SW4 is closer to the root with a lower root cost as it only has to traverse one link but SW2 has to traverse both the link to SW and then to the root which makes it the least preferred of the two.
+
+Lets change things and connect SW3 and SW4 together. Both switches are 1 link away from the root. What happens to the link between the two of them?
+
+If we look back at the topology since the priority and the cost are the same it will be up to the lowest MAC. in this case SW3 will be designated and SW4 will be blocking on that link.
+
+![SW4-Blocking](Images/SW4-Blocking.png)
+
+Lets confirm in the STP table.
+
+![SW4-STP](Images/SW4-STP.png)
+
+As expected E0/2 is in a blocking state. 
+
+# Creating Multiple MST instances
+
+Next I will create multiple MST instances and map vlan 10 to instance 1. We will also be changing to root bridge for instance 1 which will demo how you can logically utilize all links by having some links up for certain vlans but down for others based on the instance and the Root ID.
+
+On the switches we will run the following
+
+SW:
+
+conf t  
+vlan 10  
+name Demo  
+exit  
+spanning-tree mst configuration  
+instance 1 vlan 10  
+exit  
+
+We will also make SW2 the root bridge using the following command.
+
+spanning-tree mst 1 root primary
+
+lets see the results from the SW2 spanning-tree table
+
+![MST1](Images/MST1.png)
+
+As you can see SW2 is the root for MST1 which contains vlan 10.
+
+Now lets look again at MST0
+
+![MST0](Images/MST0.png)
+
+We can see that SW5 is still the root for MST0 which contains vlan 1-9 and 11-4094.
+
+In another lab we will look at how MST can do PVST simulation if there are PVST only routers attached into a MST region.
+
 
