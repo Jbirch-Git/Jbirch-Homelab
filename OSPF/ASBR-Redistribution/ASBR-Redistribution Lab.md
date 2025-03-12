@@ -121,9 +121,9 @@ You can do a permit or deny clause based on the following 3 conditions.
 
 Now you create the route-map statements. Since we are denying matching ACL entries we need a permit statement following that in the route map. If we did the opposite and were doing a permitted networks statement in the ACL and RM then no additional RM entry is needed.
 
-route-map no5-rm deny 5
-match ip address no5
-route-map no5-rm permit 10
+route-map no5-rm deny 5  
+match ip address no5  
+route-map no5-rm permit 10  
 
 then re-apply to your redistribution command just like before as they both use route-maps to apply.
 
