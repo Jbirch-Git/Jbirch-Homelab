@@ -108,14 +108,16 @@ That concludes the Lab for OSPF ASBR route redistribution as well as route filte
 # Extra!  
 # Using Access-lists for filtering
 
-I have tested filtering using access-lists before if you are more comfortable with those they are close to the same but in your access list you will want to do the following.
+I have tested filtering using access-lists before and once you understand prefix lists I think you will prefer it over ACL's for routing. 
+
+if you are more comfortable with ACL's they are close to the same and I will demo the same filter via ACL.
 
 conf t
 ip access-list extended no5
 permit ip 5.5.5.0 0.0.0.255 any
 deny ip any any
 
-You can do a permit or deny clause based on the following 3 conditions.
+You can do a permit or deny clause in your route-map based on the following 3 conditions depending on how you built your ACL.
 
 -If you use an ACL in a route-map permit clause, routes that are permitted by the ACL are redistributed.  
 -If you use an ACL in a route-map deny clause, routes that are permitted by the ACL are not redistributed.  
