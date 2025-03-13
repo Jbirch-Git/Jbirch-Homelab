@@ -133,4 +133,4 @@ then re-apply to your redistribution command just like before as they both use r
 
 ![R2-ACL-DB](Images/R2-ACL-DB.PNG)
 
-As we can see we acheived the same result using ACL's
+As we can see we achieved the same result using ACL's
