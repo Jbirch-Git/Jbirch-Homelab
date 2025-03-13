@@ -12,7 +12,7 @@ Topology for this lab will be the following:
 
 On R5 we have configured a default route to point to R2 for return traffic. On R2 we have configured 2 static routes.
 
-ip route 5.5.5.0 255.255.255.0 10.25.0.2
+ip route 5.5.5.0 255.255.255.0 10.25.0.2  
 ip route 10.5.0.0 255.255.255.0 10.25.0.2
 
 These point to the two networks available on R5. Let's confirm they are in the routing table of R2.
