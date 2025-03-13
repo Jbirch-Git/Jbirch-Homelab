@@ -66,5 +66,5 @@ From these pings we can see where R1 went down and where R2 picked up the load. 
 
 ![R2-Pickup](Images/R2-Pickup.PNG)
 
-From this you can see the R2 router changing from the standby state into the active state and picking up the traffic for the pings coming from R3. this also changed for the second HSRP group facing R4 so both ends changed routers for their path resulting in significantly lower down time when R1 went offline due to a reload.
+From this you can see R2 router changing from the standby state into the active state and picking up the traffic for the pings coming from R3. this also changed for the second HSRP group facing R4 so both ends changed routers for their path resulting in little to no downtime even when the active router went offline.
 
