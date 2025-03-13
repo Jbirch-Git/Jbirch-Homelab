@@ -41,7 +41,7 @@ Since I have set a priority of 110 on R1 if both come up at the same time it wil
 
 Now lets check the VRRP config.
 
-![R1-VRRP](Images/R1-VRRP.PNG)
+![R1-VRRP](Images/R1-VRRP.png)
 
 As you can see R1 is the master router with a priority of 110.
 
@@ -55,14 +55,14 @@ ip route 0.0.0.0 0.0.0.0 10.20.0.3
 
 Let's test now.
 
-![R3-Ping-S](Images/R3-Ping-S.PNG)
+![R3-Ping-S](Images/R3-Ping-S.png)
 
-![R2-Master](Images/R2-Master.PNG)
+![R2-Master](Images/R2-Master.png)
 
 As we can see there were only 2 pings lost when R1 went offline. We can also see the message from R2 changing state from Backup to Master.
 
 Next we will bring R1 back online to show the Preempt state changes back to Master for R1 when it comes online and Backup for R2.
 
-![R2-Backup](Images/R2-Backup].PNG)
+![R2-Backup](Images/R2-Backup].png)
 
 As you can see R2 becomes the backup router now that R1 has come back online.
