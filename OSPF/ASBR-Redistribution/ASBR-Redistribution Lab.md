@@ -52,8 +52,7 @@ Next we are going to try and filter out the 5.5.5.0 network within R2's redistri
 
 # Create Prefix-list
 
-First lets create a prefix list. (you can also use an access-list but I prefer a prefix-list for route-maps)
-
+First lets create a prefix list. (you can also use an access-list I will demo that at the end of the lab)
 R2:  
 conf t  
 ip prefix-list no5 deny 5.5.5.0/24
