@@ -95,7 +95,7 @@ The 5.5.5.0 Type 5 LSA is no longer in the ospf Database. Let's confirm on R4 as
 
 The same result! 5.5.5.0 is completely filtered on on the OSPF network.
 
-Finally we forgot to test a ping to a network connected on R4. From R4 lets run a ping to R5's 10.5.0.1 address.
+Finally we forgot to test a ping to a network connected on R5. From R4 lets run a ping to R5's 10.5.0.1 address.
 
 ![R4-Ping](Images/R4-Ping.PNG)
 
