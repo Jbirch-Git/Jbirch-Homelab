@@ -1,6 +1,6 @@
 # VRRP Lab
 
-In this lab we will be configuring 2 routers in a VRRP group for first hop redundancy to a downstream client. In this case it will be another downstream router which has these two routers as its default gateway.
+In this lab we will be configuring 2 routers in a VRRP group for first hop redundancy to a downstream client. In this case it will be another downstream router which has R1 and R2 as its default gateway.
 
 Assets in this lab:
 
