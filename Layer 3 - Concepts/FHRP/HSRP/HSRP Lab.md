@@ -62,7 +62,7 @@ Let's test now.
 
 ![R3-Ping-S](Images/R3-Ping-S.PNG)
 
-From these pings we can see where R1 went down and where R2 picked up the load. Due to R2 still being in speaking state is took a bit of extra time compared to normal in this test.
+From these pings we can see where R1 went down and where R2 picked up the load. Due to R2 still being in speaking state it took a bit of extra time compared to normal in this test. You usually only lose about 2 pings using HSRP V2
 
 ![R2-Pickup](Images/R2-Pickup.PNG)
 
