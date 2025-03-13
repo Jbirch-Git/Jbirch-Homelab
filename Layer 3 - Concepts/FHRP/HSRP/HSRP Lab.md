@@ -18,7 +18,7 @@ Due to us shutting down R3's default gateway (R1) the pings stopped flowing to 1
 
 We are now going to configure HSRP to bring R2 into the picture and allow the two to send each other heartbeats so that the standby router can take over when the Active router goes offline.
 
-To configure HSRP run the following on R1 and R2.
+To configure HSRP run the following on R1 and R2. We will be configuring 2 HSRP groups one for the 10.10.0.0/24 network and one for the 10.20.0.0/24 network so that both send and return traffic between R3 and R4 are redundant.
 
 R1: 
 
