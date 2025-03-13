@@ -6,7 +6,7 @@ Assets in this lab:
 
 R1,R2,R3,R4,SW1,SW2
 
-The topology for this lab will look like the following:
+Topology for the Lab:
 
 ![Topology](Images/Topology.PNG)
 
