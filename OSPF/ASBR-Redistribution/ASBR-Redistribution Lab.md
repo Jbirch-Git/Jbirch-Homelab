@@ -123,7 +123,7 @@ You can do a permit or deny clause in your route-map based on the following 3 co
 -If you use an ACL in a route-map deny clause, routes that are permitted by the ACL are not redistributed.  
 -If you use an ACL in a route-map permit or deny clause, and the ACL denies a route, then the route-map clause match is not found and the next  route-map clause is evaluated.
 
-Now you create the route-map statements. Since we are denying matching ACL entries we need a permit statement following that in the route map. If we did the opposite and were doing a permitted networks statement in the ACL and RM then no additional RM entry is needed.
+Now you create the route-map statements. Since we are denying by matching ACL entries we need a permit statement following that in the route map or else all other networks wont match a route-map condition. If we did the opposite and were doing a permitted networks statement in the ACL and RM then no additional RM entry is needed.
 
 route-map no5-rm deny 5  
 match ip address no5  
