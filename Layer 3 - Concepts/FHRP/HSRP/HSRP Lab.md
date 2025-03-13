@@ -50,7 +50,7 @@ Now lets check the standby config.
 
 As we can see R1 is the active router and R2 is the standby router due to the priorities set for both HSRP groups which connect to each downstream router.
 
-Now we need to change the gateway of the routers to point to the HSRP virtual IP of .3 on each network and test again.
+Now we need to change the gateway of the downstream routers to point to the HSRP virtual IP of .3 on each network and test again.
 
 R3:  
 ip route 0.0.0.0 0.0.0.0 10.10.0.3  
