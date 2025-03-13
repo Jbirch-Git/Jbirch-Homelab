@@ -63,6 +63,6 @@ As we can see there were only 2 pings lost when R1 went offline. We can also see
 
 Next we will bring R1 back online to show the Preempt state changes back to Master for R1 when it comes online and Backup for R2.
 
-![R2-Backup](Images/R2-Backup].png)
+![R2-Backup](Images/R2-Backup.png)
 
 As you can see R2 becomes the backup router now that R1 has come back online.
