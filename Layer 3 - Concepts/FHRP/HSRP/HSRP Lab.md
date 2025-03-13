@@ -42,7 +42,7 @@ interface e0/2
 standby 2 ip 10.20.0.3  
 standby version 2   
 
-Since I have set priority of 110 on R1 if both come up at the same time it will be the active router.
+Since I have set a priority of 110 on R1 if both come up at the same time it will be the active router. I did not however set preempt which would force a failover to happen so that R1 is always the active when available but this is an available option if there is a preferred router to be the active router.
 
 Now lets check the standby config.
 
