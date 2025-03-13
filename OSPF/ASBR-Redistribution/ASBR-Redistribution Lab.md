@@ -56,7 +56,7 @@ First lets create a prefix list. (you can also use an access-list I will demo th
 
 R2:  
 conf t  
-ip prefix-list no5 deny 5.5.5.0/24
+ip prefix-list no5 deny 5.5.5.0/24  
 ip prefix-list no5 permit 0.0.0.0/0 le 32
 
 ![R2-PL](Images/R2-PL.PNG)
