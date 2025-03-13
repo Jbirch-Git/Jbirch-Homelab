@@ -69,7 +69,7 @@ Next we will create the route-map that is used in the redistribution command tha
 
 R2:  
 conf t  
-route-map no5-rm permit 5
+route-map no5-rm permit 5  
 match ip address prefix-list no5
 exit
 
