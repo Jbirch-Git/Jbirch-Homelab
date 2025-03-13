@@ -42,7 +42,7 @@ If we look at the OSPF neighbor tables of R1 and R2 we can see all the neighbors
 
 ![R2-NB](Images/R2-NB.PNG)
 
-Next let's run a show ip ospf interface brief to show the interfaces participating in OSPF.
+Next let's run a show ip ospf interface brief to show the interfaces participating in OSPF on R1 and R2.
 
 ![R1-OSPF-INT](Images/R1-OSPF-INT.PNG)
 
