@@ -82,7 +82,7 @@ No that we have the route-map we apply it to the redistribution. To do this we h
 R2:  
 conf t  
 router ospf 1  
-no redistribution static subnets
+no redistribution static subnets  
 redistribution static subnets route-map no5-rm
 
 With that applies lets check R2's ospf database.
