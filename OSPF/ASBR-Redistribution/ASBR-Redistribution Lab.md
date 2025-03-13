@@ -30,9 +30,9 @@ conf t
 router ospf 1  
 redistribute static subnets  
 
-WARNING! If you do not put subnets after the work static this will only redistribute classful address spaces and if they dont conform the redistribution will not work and there will be no Type 5 LSA's.
+WARNING! If you do not put subnets in the redistribution command it will only redistribute classful address spaces and if they don't conform the redistribution will not work.
 
-Let's take a look back on the OSPF database on R2 as well as R4.
+Let's take a look back on the OSPF database on R2 then on R4 in area 1.
 
 ![R2-T5](Images/R2-T5.PNG)
 
