@@ -158,4 +158,4 @@ We will now test taking and interface down on SW2 to show what the updated port 
 
 ![SW2-Down](Images/SW2-Down.png)
 
-The port E0/1 can be seen in the D state as it is down but since E0/0 is still bundled into the port channel traffic will continue to flow over the link.
+The port E0/1 can be seen in the D state as it is down but since E0/0 is still bundled into the port channel. Because of this traffic will continue to flow over the available link.
