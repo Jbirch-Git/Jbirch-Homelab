@@ -1,6 +1,6 @@
 # Etherchannel Lab
 
-In this lab we will be configuring Etherchannel on two links connecting from an access switch to a distribution switch. This resolved the issue of connecting two links between the switches and spanning-tree disabling one of the links due to a loop. These two links are now locally seen as a single link allowing for more throughput from the switch.
+In this lab we will be configuring Etherchannel on two links connecting from an access switch to a distribution switch. This resolves the issue of connecting two links between the switches and spanning-tree disabling one of the links due to a loop. These two links are now logically seen as a single link allowing for more throughput from the switch.
 
 Assets in this lab:
 
@@ -10,15 +10,15 @@ The Topology of this lab will be the following:
 
 ![Topology](Images/Topology.png)
 
-Lets display from SW1 what happens in a normal topology where 2 uplinks are connected to the Core. We will go to the SW1 switch and review the STP topology.
+Lets display from SW1 what happens in a normal topology where 2 uplinks are connected to the Core.
 
 ![SW1-STP-BLK](Images/SW1-STP-BLK.png)
 
-As we can see there are 2 links one is a root port and in a forwarding state to the core. The other is an alternate port and in a blocking state so only a single link is available. Lets configure Etherchannel 3 ways on each access switch to display what Etherchannel does.
+As we can see there are 2 links, one is a root port in a forwarding state to the core, the other is an alternate port in a blocking state so only a single link is available. Lets configure Etherchannels 3 ways on each access switch to display what Etherchannel does.
 
 # Unconditionally ON
 
-Lets start with SW1 we are going to configure both ports into a port channel and there will be no negotation protocol over the etherchannel it is considered Unconditionally ON.
+Lets start with SW1 we are going to configure both ports into a port channel and there will be no negotation protocol over the etherchannel, it is considered Unconditionally ON.
 
 Create port Channel:
 
@@ -98,13 +98,13 @@ switchport trunk encapsulation dot1q
 switchport mode trunk  
 channel-group 2 mode active
 
-Important to note: the LACP modes available are Active/Passive. As long as one side is set to Active then a etherchannel will form. If you set both end to passive an etherchannel will not form as they wont be sending out any negotiation packets. If both ends are Active then a etherchannel will form.
+Important to note: the LACP modes available are Active/Passive. As long as one side is set to Active an etherchannel will form. If you set both end to passive an etherchannel will not form as they wont be sending out any negotiation packets. If both ends are Active then a etherchannel will form.
 
 Let's take a look at the etherchannel summary as well as the spanning-tree topology.
 
 ![SW2-STP-FWD](Images/SW2-STP-FWD.png)
 
-Just like SW1 the spanning tree topology now only shows the local port channel within spanning tree as a forwarding state allowing both links to be in an online state.
+Just like SW1 the spanning tree topology now only shows the local port channel within spanning tree in a forwarding state allowing both links to be in an online state.
 
 ![Core-EthChannel](Images/Core-EthChannel.png)
 
@@ -148,14 +148,14 @@ channel-group 1 mode desirable
 
 Important to note: the PAGP modes available are Desirable/Auto. Exactly like LCAP if at least one end is configured with Desirable it will form an etherchannel or if both are desirable. If both are auto they will not send any negotiation packets and a channel will not form.
 
-Just like on SW1 and SW2 the spanning-tree Topology will show port channel 1 within the topology vs the individual interfaces allowing both to be in a forwarding state.
+Just like on SW1 and SW2 the spanning-tree topology will show port channel 1 within the topology vs the individual interfaces allowing both to be in a forwarding state.
 
 ![Core-PAGP](Images/Core-PAGP.png)
 
-As you can see from the Etherchannel summary the negotiation protocol is seen as PAGP. This is cisco proprietary if you are forming etherchannel also knows as link-aggregation on a different vendor switch/router you will need to use LACP.
+As you can see from the Etherchannel summary the negotiation protocol is seen as PAGP. This is cisco proprietary, if you are forming etherchannel also knows as link-aggregation on a different vendor switch/router you will need to use LACP.
 
 We will now test taking and interface down on SW2 to show what the updated port channel summary will look like.
 
-![SW2-Down](Images/SW2-Down.png
+![SW2-Down](Images/SW2-Down.png)
 
 The port E0/1 can be seen in the D state as it is down but since E0/0 is still bundled into the port channel traffic will continue to flow over the link.
