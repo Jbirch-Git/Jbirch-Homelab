@@ -4,7 +4,7 @@ In this lab we will be configuring Etherchannel on two links connecting from an 
 
 Assets in this lab:
 
-SW1,SW2,SW3,SW4
+Core,SW1,SW2,SW3
 
 The Topology of this lab will be the following:
 
