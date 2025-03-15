@@ -41,7 +41,7 @@ Here is a look at the NAT translation table.
 
 We can see this entry lives in the NAT table even if its not passing any traffic at the time.
 
-Also note that static NAT is bi-directional so traffic coming from R2 facing this inside global address of 10.1.0.3 and it will be translated to the inside local address of 1.1.1.1. Also referred to as Destination NAT vs the test we just ran is considered a Source NAT.
+Note that static NAT is bi-directional so traffic coming from R2 to the inside global address of 10.1.0.3 will be translated to the inside local address of 1.1.1.1.
 
 # Dynamic NAT
 
