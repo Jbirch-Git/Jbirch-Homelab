@@ -45,7 +45,7 @@ Note that static NAT is bi-directional so traffic coming from R2 to the inside g
 
 # Dynamic NAT
 
-Next we will explore dynamic NAT which is similar to static NAT but this will be applies to multiple inside local addresses based on ACLs that dictate which traffic matches for NAT'ing purposes. This can NAT to a single address using PAT (We will explore that later) or to a pool of addresses on the inside global level. If you do not use PAT then you can only NAT as many inside local clients as you have inside global addresses in the address pool.
+Next we will explore dynamic NAT which is similar to static NAT but this will be applied to multiple inside local addresses based on ACL or Route-Maps that dictate which traffic matches for NAT'ing purposes. This can NAT to a single address using PAT (We will explore that later) or to a pool of addresses on the inside global level. If you do not use PAT then you can only NAT as many inside local clients as you have inside global addresses in the address pool.
 
 # Configure Address Pool
 
