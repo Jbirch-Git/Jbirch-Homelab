@@ -24,10 +24,9 @@ Inside is where your endpoints and local networks live. Outside normally points 
 
 On R1 we defined the loopback interface as the inside zone and E0/0 as the outside zone.
 
-Now let's create the static NAT to transform 1.1.1.1 from the inside zone to 10.1.0.3/24 going to the outside zone. Once we apply static NA, 10.1.0.3 is assigned to 1.1.1.1, any other inside address cannot use this IP as this is a static assignment.
+Now let's create the static NAT to transform 1.1.1.1 from the inside zone to 10.1.0.3/24 going to the outside zone. Once we apply static NAT, 10.1.0.3 is assigned to 1.1.1.1, any other inside address cannot use this IP as this is a static assignment.
 
-R1:
-
+R1:  
 ip nat inside source static 1.1.1.1 10.1.0.3
 
 Let's now run a ping to 10.1.0.2 and see the result through a packet capture on the E0/0 interface.
