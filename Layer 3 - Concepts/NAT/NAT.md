@@ -39,7 +39,7 @@ Here is a look at the NAT translation table.
 
 ![R1-NAT-Table](Images/R1-NAT-Table.png)
 
-We can see this entry lives in the NAT table even if its not passing any traffic at the time. 1.1.1.1 will translate to 10.1.0.3.
+We can see this entry lives in the NAT table even if its not passing any traffic at the time.
 
 Also note that traffic can be sourced from R2 facing this inside global address of 10.1.0.3 and it will be translated to the inside local address of 1.1.1.1. Also referred to as Destination NAT vs the test we just ran is considered a Source NAT.
 
