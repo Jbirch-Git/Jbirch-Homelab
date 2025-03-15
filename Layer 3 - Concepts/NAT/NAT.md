@@ -14,17 +14,17 @@ Lets first define the zones within the topology.
 
 ![Topology-Zones](Images/Topology-Zones.png)
 
-In this you can see the inside local/global as well as outside local/global zones. In this example we will be NAT'ing the Inside local zone to an IP on the inside local address space. From the outside global's perspective the traffic will be coming from the outside local address.
+In this you can see the inside local/global as well as outside local/global zones. In this example we will be NAT'ing the Inside local zone to an IP on the inside global address space. From the outside global perspective the traffic will be coming from the inside global address.
 
 To define the zones you use the following command on the interface level:
 
 ip nat (inside) or (outside)
 
-Inside is where your endpoints and local networks live outside normally points to the internet or an external connection. This is not mandatory you can use outside to define the inside and inside to define the outside.
+Inside is where your endpoints and local networks live. Outside normally points to the internet or an external connection. This is not mandatory you can use outside to define the inside and inside to define the outside.
 
 On R1 we defined the loopback interface as the inside zone and E0/0 as the outside zone.
 
-Now lets create the static NAT to transform 1.1.1.1 from the inside zone to 10.1.0.3/24 going to the outside zone. Once we apply this 10.1.0.3 is assigned to 1.1.1.1. Any other inside address cannot use this IP NAT as this is a static assignment.
+Now let's create the static NAT to transform 1.1.1.1 from the inside zone to 10.1.0.3/24 going to the outside zone. Once we apply static NA, 10.1.0.3 is assigned to 1.1.1.1, any other inside address cannot use this IP as this is a static assignment.
 
 R1:
 
