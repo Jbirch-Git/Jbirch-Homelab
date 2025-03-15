@@ -93,13 +93,15 @@ ip nat inside source list NAT pool R1-Pool overload
 
 With this overload command we will now be doing PAT.
 
-Let's re run out test.
+Let's re run our test.
 
 ![R1-PAT-Table](Images/R1-PAT-Table.png)
 
 As we can see both traceroutes completed successfully. Lets look at the first translation as our example.
 
-In that first translation 1.1.1.1 on port 49258 sent traffic to 10.1.0.2 and R1 translated that first session over ip 10.1.0.4 on port 1024. when R2 responds to the traceroute it will have a destination address and port of 10.1.0.4 port 1024 which R1 now knows it needs to forward to 1.1.1.1. The same applies for 2.2.2.2 its first session was translated to ip 10.1.0.4 but on port 1027. When R2 returns traffic to R1 with a destination of 10.1.0.4 over port 1027 it knows that it is destine for 2.2.2.2. This is how almost all internet facing routers are configured to ensure we extend the life of IPv4 as long as they can because if we had to have a single public IP for each internal device we would have ran out of public IP addresses a long time ago.
+In that first translation 1.1.1.1 on port 49258 sent traffic to 10.1.0.2 and R1 translated that first session over ip 10.1.0.4 on port 1024. when R2 responds to the traceroute it will have a destination address and port of 10.1.0.4 port 1024 which R1 now knows it needs to forward to 1.1.1.1. The same applies for 2.2.2.2 its first session was translated to ip 10.1.0.4 but on port 1027. When R2 returns traffic to R1 with a destination of 10.1.0.4 over port 1027 it knows that it is destine for 2.2.2.2.
+
+This is how almost all internet facing routers are configured to ensure we extend the life of IPv4 as long as they can because if we had to have a single public IP for each internal device we would have ran out of public IP addresses a long time ago.
 
 # Configure Outside Source NAT
 
