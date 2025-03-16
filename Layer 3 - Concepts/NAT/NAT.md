@@ -105,7 +105,7 @@ This is how almost all internet facing routers are configured to ensure we exten
 
 # Configure Outside Source NAT
 
-In this example we will be configuring 2 WAY NAT which will translate an address destine for an outside local address on R1 to a different outside global address.
+In this example we will be configuring outside source NAT which will translate an address destine for an outside local address on R1 to a different outside global address.
 
 ![R1-Outside-NAT](Images/R1-Outside-NAT.png)
 
@@ -123,7 +123,7 @@ R1:
 conf t  
 ip nat inside source static 1.1.1.1 10.1.0.3
 
-Important to note: You need to have a route in the routing table available for the inside local address or else the translation will never happen as the packet is dropped due to no routes being available.
+Important to note: You need to have a route in the routing table available for the outside local address or else the translation will never happen as the packet is dropped due to no routes being available.
 
 ![R1-Outside-NAT-Ping](Images/R1-Outside-NAT-Ping.png)
 
