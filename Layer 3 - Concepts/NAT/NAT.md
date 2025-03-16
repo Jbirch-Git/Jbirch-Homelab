@@ -127,13 +127,15 @@ Important to note: You need to have a route in the routing table available for t
 
 ![R1-Outside-NAT-Ping](Images/R1-Outside-NAT-Ping.png)
 
-From this packet we can see the inside local address of 1.1.1.1 sourced an ICMP message. This ICMP message was being sent to 8.8.8.8. Since we have Static NAT enabled 1.1.1.1 is translated to 10.1.0.3 upon exiting R1 and due to the outside source NAT it was destined for the 10.1.0.2 outside global address.
+From this packet we can see the inside local address of 1.1.1.1 sourced an ICMP message. This ICMP message was being sent to the outside local address of 8.8.8.8. Since we have Static NAT enabled 1.1.1.1 is translated to 10.1.0.3 upon exiting R1 and due to the outside source NAT it was destined for the 10.1.0.2 outside global address.
 
 ![R1-Ping-S](Images/R1-Ping-S.png)
 
 As we can see the ping completed successfully.
 
+![R1-Outside-NAT-PCAP](Images/R1-Outside-NAT-PCAP.png)
 
+We can also see from a PCAP on the outside interface of R1 the traffic seen is destine for 10.1.0.2 and not the original 8.8.8.8 that was requested from the client.
 
 
 
