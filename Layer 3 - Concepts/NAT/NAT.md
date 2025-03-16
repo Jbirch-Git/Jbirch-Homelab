@@ -135,7 +135,7 @@ As we can see the ping completed successfully.
 
 ![R1-Outside-NAT-PCAP](Images/R1-Outside-NAT-PCAP.png)
 
-We can also see from a PCAP on the outside interface of R1 the traffic seen is destine for 10.1.0.2 and not the original 8.8.8.8 that was requested from the client.
+We can also see from a PCAP on the outside interface of R1 the traffic seen is destine for 10.1.0.2 and not the original 8.8.8.8 that was requested from the client. This is our indicator that the outside source NAT is working correctly.
 
 
 
