@@ -32,4 +32,8 @@ For each 60 packets over the R2 route 43 will go over the R3 route. To help quan
 
 First add both traffic share counts together to get 103.
 
-Next we first divide 60 by 103 to get .582. This means about 58% of traffic will go over R2's link. 43 divided by 103 is .417 so 42% of traffic will go over R3's link.
+Next we first divide 60 by 103 to get .582 this means about 58% of traffic will go over R2's link. 43 divided by 103 is .417 so 42% of traffic will go over R3's link.
+
+Unequal cost load balancing doesnt have to be just between two interfaces there can be up to 4 paths by default. This can be seen by running a show ip protocols.
+
+![R1-IP-Proto](Images/R1-IP-Proto.png)

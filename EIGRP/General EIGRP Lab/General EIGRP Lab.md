@@ -64,31 +64,3 @@ Let's look at the following two routes.
 For the route via R5 (10.15.0.2) the advertised distance is the same as the feasible distance. This is because the R5 router is behind the R2 router so this is an indication that it is flowing through the same router that is connected to R1 to reach R4 so it will not be a feasible succesor.
 
 For the route via R3 (10.13.0.2) the advertised distance is 409600 which is lower than the feasible distance of 432640. This means the route will be a feasible successor and will be an available backup route to fallback to if the primary route fails.
-
-# Unequal cost load balancing
-
-We will next display un-equal cost load balancing through EIGRP which as it says can be used to load balance traffic between multiple successor routes. By default this is disabled as the variance is set to 1 which means unless we had 2 successor routes with the same feasible distance (like we did have earlier) it would not select a feasible successor route to load balance.
-
-To simply the topology we will remove R5's route from the topology only leaving R3 and R2 as available routes to the R4 network. Next we will enable un-equal cost multipathing by setting the variance to a multipler more than 1. In this case we will set the variance to 2.
-
-Additionally I have increased the unequality between the two routes of R2 and R3 to help display the unequal cost multipathing better.
-
-R1:
-
-conf t  
-router eigrp 1  
-variance 2
-
-Let's check the eigrp Topology
-
-![R1-Variance](Images/R1-Variance.png)
-
-We can see now that both routes are succesor routes but how is the traffic divid up between the two? Let's run the calculations.
-
-First we will run a show ip route 4.4.4.4 to see the traffic share count values for each route.
-
-![R1-Traffic-Share](Images/R1-Traffic-Share.png)
-
-For each 60 packets over the R2 route 43 will go over the R3 route. To help quantify this better lets add them both together to get 103.
-
-Next we first divide 60 by 103 to get .582. This means about 58% of traffic will go over R2's link. 43 divided by 103 is .417 so 42% of traffic will go over R3's link.
