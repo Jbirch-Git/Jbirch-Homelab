@@ -46,7 +46,7 @@ With R5 connected we now have the following topology.
 
 ![R5-Topology](Images/R5-Topology.png)
 
-After R5 has been configured we now have an extra path to flow to the R4 network. Let's check back on R1's EIGRP topology table. (Ensure you use the command show ip eigrp topology all-links or else it will not show routes that don't meet the feasibility condition)
+After R5 has been configured we now have an extra path to flow to the R4 network. Let's check back on R1's EIGRP topology table. (Ensure you use the command show ip eigrp topology all-links or else it will not show all routes, even those that don't meet the feasibility condition)
 
 ![R1-All-Links](Images/R1-All-Links.png)
 
