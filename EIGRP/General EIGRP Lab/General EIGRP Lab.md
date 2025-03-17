@@ -38,7 +38,7 @@ Next let's talk about the Feasibility condition and what it achieves as well as 
 
 The feasibility condition is a loop prevention mechanism to eliminate routing loops or have a feasible successor (backup route) that goes through the successor router that is currently down.
 
-The feasibility condition reads that a feasible successor must have an advertised distance lower than the feasible distance for it to meet the feasibility condition. This concept takes real hands on practice to understand properly.
+The feasibility condition reads that a feasible successor must have an advertised distance lower than the feasible distance of the successor route for it to meet the feasibility condition. This concept takes real hands on practice to understand properly.
 
 We will create an example of this by introducing another router into the topology connected to R2.
 
@@ -46,7 +46,7 @@ With R5 connected we now have the following topology.
 
 ![R5-Topology](Images/R5-Topology.png)
 
-After R5 has been configured we now have an extra path to flow to the R4 network. Lets check back on R1's EIGRP topology table. (Ensure you use the command show ip eigrp topology all-links or else it will not show routes that dont meet the feasibility condition)
+After R5 has been configured we now have an extra path to flow to the R4 network. Lets check back on R1's EIGRP topology table. (Ensure you use the command show ip eigrp topology all-links or else it will not show routes that don't meet the feasibility condition)
 
 ![R1-All-Links](Images/R1-All-Links.png)
 
