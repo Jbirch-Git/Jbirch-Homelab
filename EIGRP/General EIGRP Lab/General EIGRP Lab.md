@@ -54,7 +54,7 @@ Let's analyze all the available routes. Starting with the Successor route of R2.
 
 10.12.0.2 (432640/407040), Ethernet0/1 - Here we can see the Feasible Distance is 432640 and the Advertised Distance is 407040. 
 
-For our feasibility condition all other routes that want to be feasible successors have to have an advertised distance lower than 432640.
+For our feasibility condition to be met by our other routes they must have an advertised distance lower than 432640. At which point they will become feasible successors.
 
 Let's look at the following two routes.
 
