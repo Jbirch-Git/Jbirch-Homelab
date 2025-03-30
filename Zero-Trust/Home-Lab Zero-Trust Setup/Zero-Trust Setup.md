@@ -61,3 +61,35 @@ Let's start with a simple Firewall check and enable it to validate whether the f
 We will also configure a file check.
 
 ![File-Check](Images/File-Check.png)
+
+Now with both posture checks in place let's go onto the client and validate the postures statuses.
+
+![Device-Posture](Images/Device-Posture.png)
+
+As we can see the device posture checks have applied and are both in a true state indicating the file exists and the Firewall is enabled.
+
+# Deploying an application through CloudFlare
+
+Next lets deploy an application through cloudflare.
+
+Go to Access then applications. Create a new application and select Self-Hosted.
+
+Configure the name in this case we will do access into the firewall.
+
+Configure the Private IP or Hostname and port that its reachable by and save.
+
+Next we are configuring a policy which will reference the Device-Posture checks.
+
+![Posture-Policy](Images/Posture-Policy.png)
+
+Next we are going to try and access the firewall through the client. 
+
+![Firewall-Access](Images/Firewall-Access.png)
+
+Success. 
+
+Now let's delete the testing file and check the device posture again.
+
+![Posture-Change](Images/Posture-Change.png)
+
+As we can see the posture has changed and 
