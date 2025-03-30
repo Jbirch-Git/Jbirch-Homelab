@@ -38,3 +38,26 @@ By default it will use your cloudflare account as well as a one time pin to auth
 
 ![OAuth-List](Images/OAuth-List.png)
 
+Follow the needed steps to connect the specific IDP. for OAuth its mainly a client or application ID followed by a client or application secret after inputting the homepage and callback page.
+
+We can now see Github is in our authentication methods.
+
+![Github-OAuth](Images/Github-OAuth.png)
+
+Github has 2 factor integrated into the login but if 2 factor is not configured through your IDP of choice this is a baseline configuration for todays standard to ensure the end user identifying is who they say they are by not only authenticating by something they know but with something they have.
+
+Next let's look at Device Security another key pillar to our Zero Trust architecture.
+
+# Device Security
+
+Device Security has many different variables but in this we are going to be looking at how Device Security is integrated into the Network Security pillar using Device Posture checks to continually monitor the endpoints status and if that status changes we can adjust how the network treats that device and its network flows.
+
+To configure Device Posture checks we are going to go to Settings > Warp Client > Device Posture and we add new.
+
+Let's start with a simple Firewall check and enable it to validate whether the firewall on the endpoint is enabled. 
+
+![Firewall-Check](Images/Firewall-Check.png)
+
+We will also configure a file check.
+
+![File-Check](Images/File-Check.png)
