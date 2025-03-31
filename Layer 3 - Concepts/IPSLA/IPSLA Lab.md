@@ -18,7 +18,7 @@ We have configured the connected networks and R2 has been configured with a defa
 
 It can reach the internet. Now let's configure R1's 2 default routes. One direct with IPSLA and a floating static route through R2.
 
-R1:
+R1:  
 conf t  
 ip sla 1  
 icmp-echo 192.168.1.1 source-interface ethernet0/1  
@@ -40,7 +40,7 @@ The SLA is now actively sending ICMP messages to one of our internet addresses b
 
 We now need to create a track which is a tracking object which references the IP SLA.
 
-R1:
+R1: 
 conf t  
 track 1 ip sla 1 state  
 
