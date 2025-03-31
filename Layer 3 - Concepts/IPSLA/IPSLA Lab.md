@@ -80,4 +80,4 @@ Success
 
 As we can see the traffic is now flowing through R2 up to R3 now that the Routing table has changed to the floating static route allowing internet access through a secondary link due to IP SLA tracking.
 
-(Outside of a lab environment there would be a few additions to this lab  which include NAT'ing the source traffic from 1.1.1.1 to the inside global address of the router. We worked around this with some static routing on R3 and R2 but normally this is not required while using NAT as it egresses R2 and R1's internet bound interfaces.)
+(Outside of a lab environment there would be a few additions to this lab  which include NAT'ing the source traffic from 1.1.1.1 to the inside global address of the router. We worked around this with some static routing on R3 and R2 but normally this is not required while using NAT as it egresses R2 and R1.
