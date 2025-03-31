@@ -58,7 +58,7 @@ ip route 0.0.0.0 0.0.0.0 172.16.0.2 track 1
 
 We can now see the primary default route is through R3.
 
-Let's trace through R3 our an internet resource (192.168.1.2) which resides under R3 and is not directly connected.
+Let's trace through R3 our internet resource (192.168.1.2). This resides under R3 and is not directly connected to R1 so it will be using the default route.
 
 ![R1-R3-TR](Images/R1-R3-TR.png)
 
