@@ -10,7 +10,7 @@ Topology for the lab:
 
 ![Topology](Images/Topology.png)
 
-We will be using IPSLA allow an automated failover to occur when the internet is no longer reachable direct from the R3 router. We will failover to flow the default route through the R2 router and up. The monitoring will be done to the loopback behind R3 which will simulate pinging an address on the internet.
+We will be using IPSLA allow an automated failover to occur when the internet is no longer reachable direct from the R3 router on R1. We will failover to flow the default route through the R2 router and up. The monitoring will be done to the loopback behind R3 which will simulate pinging an address on the internet.
 
 We have configured the connected networks and R2 has been configured with a default route up to R3 through E0/1. Let's test to ensure connectivity to the internet is functioning.
 
@@ -19,10 +19,10 @@ We have configured the connected networks and R2 has been configured with a defa
 It can reach the internet. Now let's configure R1's 2 default routes. One direct with IPSLA and a floating static route through R2.
 
 R1:
-conf t
-ip sla 1
-icmp-echo 192.168.1.1 source-interface ethernet0/1
-end
+conf t  
+ip sla 1  
+icmp-echo 192.168.1.1 source-interface ethernet0/1  
+end  
 
 Now let's run a show ip sla summary. 
 
@@ -30,9 +30,9 @@ Now let's run a show ip sla summary.
 
 As we can see there is a IP SLA but it is not running as there is no status.
 
-R1: 
-conf t
-ip sla schedule 1 life forever start-time now
+R1:   
+conf t  
+ip sla schedule 1 life forever start-time now  
 
 ![R1-SLA-Active](Images/R1-SLA-Active.png)
 
@@ -41,8 +41,8 @@ The SLA is now actively sending ICMP messages to one of our internet addresses b
 We now need to create a track which is a tracking object which references the IP SLA.
 
 R1:
-conf t
-track 1 ip sla 1 state
+conf t  
+track 1 ip sla 1 state  
 
 ![R1-Track](Images/R1-Track.png)
 
@@ -50,9 +50,9 @@ We can now see the tracking object is configured. Take note that in the tracked 
 
 Let's configure our static default route using tracked objects.
 
-R1:
-conf t
-ip route 0.0.0.0 0.0.0.0 172.16.0.2 track 1
+R1:  
+conf t  
+ip route 0.0.0.0 0.0.0.0 172.16.0.2 track 1  
 
 ![R1-RT](Images/R1-RT.png)
 
