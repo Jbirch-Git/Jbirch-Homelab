@@ -40,7 +40,7 @@ The SLA is now actively sending ICMP messages to one of our internet addresses b
 
 We now need to create a track which is a tracking object which references the IP SLA.
 
-R1: 
+R1:  
 conf t  
 track 1 ip sla 1 state  
 
