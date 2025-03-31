@@ -36,7 +36,7 @@ ip sla schedule 1 life forever start-time now
 
 ![R1-SLA-Active](Images/R1-SLA-Active.png)
 
-The SLA is now actively sending ICMP messages to one of our internet addresses behind R3 through R2 as we don't have a direct static route to R2.
+The SLA is now actively sending ICMP messages to one of our internet addresses behind R3 out of E0/1
 
 We now need to create a track which is a tracking object which references the IP SLA.
 
