@@ -72,7 +72,11 @@ As we can see the device posture checks have applied and are both in a true stat
 
 Next lets deploy an application through cloudflare.
 
-Go to Access then applications. Create a new application and select Private Network. You would select Self-Hosted for a service that you have a Public DNS record pointing too that can be reached without the WARP client. Like browser access for a contractor.
+Go to Access then applications. Create a new application and select Private Network.
+
+![Private-Network](Images/Private-Network.png)
+
+(Note) You would select Self-Hosted for a service that you have a Public DNS record pointing too that can be reached without the WARP client. Like browser access for a contractor.
 
 Configure the name in this case we will do access into the firewall.
 
