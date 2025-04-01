@@ -30,6 +30,18 @@ Your tunnel status should be showing HEALTHY.
 
 ![Tunnel-Health](Images/Tunnel-Health.png)
 
+To enable network access through the cloudflared tunnel using the WARP client you will create a Route as well as define the split tunnel configuration for the client. Let's configure that now.
+
+Create route:
+
+![Network-Route](Images/Network-Route.png)
+
+Next we will edit the WARP device settings. Go to Setting > WARP Client > Device Settings > Profile Settings then click on your profile. You can either modify the default or create a new one.
+
+Go to Split-Tunnel and set to include and hit Manage. Under there you will define the networks that should flow through the WARP client.
+
+![Split-Tunnel](Images/Split-Tunnel.png)
+
 Now that we have tunnel connectivity let's configure work on the first pillar of Zero Trust.
 
 # Identity
@@ -98,4 +110,21 @@ Now let's delete the testing file and check the device posture again.
 
 ![Posture-Change](Images/Posture-Change.png)
 
-As we can see the posture has changed by default for Cloudflare Device Posture is evaluated at the start of the session creation. We will create a new session to the firewall and see if the traffic is passed.
+As we can see the posture has changed. By default for Cloudflare Device Posture is evaluated at the start of the session creation. We will create a new session to the firewall and see if the traffic is passed. You will also have to play with the session lifetime for the application.
+
+![Connection-Closed](Images/Connection-Closed.png)
+
+![Firewall-Block](Images/Firewall-Block.png)
+
+Let's add the file back and check the logs once again.
+
+![Firewall-Allow](Images/Firewall-Allow.png)
+
+Success. This displays the use of continuous assessment to ensure that device are compliant while accessing resources. Next we are going to look into the data that is being transmitted to and from the device to ensure nothing malicious or unwanted is flowing through our network as they access these defined applications.
+
+# Network Security
+
+This will bring us to our Network Security Pillar where we will dig into the traffic being sent to and from the endpoint onto our network inspecting the data as it flows inline. This will be done by utilizing TLS decryption.
+
+To Configure TLS decryption on the WARP client go to Settings > Network > TLS Decryption and enable TLS decryption. Following this we will have to ensure that the CA certificate from cloudflare is installed on each endpoint. This can be set to be done automatically Global Settings under Settings > WARP Client.
+
