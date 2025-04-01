@@ -72,11 +72,13 @@ As we can see the device posture checks have applied and are both in a true stat
 
 Next lets deploy an application through cloudflare.
 
-Go to Access then applications. Create a new application and select Self-Hosted.
+Go to Access then applications. Create a new application and select Private Network. You would select Self-Hosted for a service that you have a Public DNS record pointing too that can be reached without the WARP client. Like browser access for a contractor.
 
 Configure the name in this case we will do access into the firewall.
 
-Configure the Private IP or Hostname and port that its reachable by and save.
+Configure the Private IP or Hostname and port that its reachable by and configure the policy.
+
+![Application-Policy](Images/Application-Policy.png)
 
 Next we are configuring a policy which will reference the Device-Posture checks.
 
