@@ -4,14 +4,14 @@ I will Demonstrating some basic functions related to WAF (Web Application Firewa
 
 # What is a WAF?
 
-Let's first lay down a base as to what a WAF is and what the intended use case of this product is.
+Let's first lay down a base as to what WAF is and what the intended use case of this product is.
 
-A WAF is protection for web applications through http/https and operates at Layer 7. WAF's intention is to block against attacks pertaining to Cross Site Scripting and SQL injection. The OWASP top ten is a good point of starting as most WAF's follow block attacks within the top ten described below.
+A WAF is protection for web applications through http/https and operates at Layer 7. WAF's intention is to block against attacks pertaining web applications like Cross Site Scripting and SQL injection. The OWASP top ten is a good point of starting as most WAF's block attacks within the top ten described below.
 
 OWASP Top Ten description:  
 https://owasp.org/www-project-top-ten/
 
-WAF's themselves do not mask the identity of the site it looks more like a firewall that sits infront of the web app you are protection very much like how Firewall's sit infront of critical infrastructure in a castle moat network architecture.
+WAF's themselves do not mask the identity of the site its intent is more like a firewall that sits infront of the web app you are protection very much like how Firewall's sit infront of critical infrastructure in a castle moat network architecture.
 
 Let's dive into setting up WAF protection for web apps through CloudFlare.
 
