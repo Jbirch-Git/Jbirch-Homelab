@@ -62,7 +62,7 @@ Let's configure out second rule which is to filter or disallow all traffic going
 
 We utilize the wildcard URI setting as the site can be reached from multiple subdomains like resume.jbnetworks.ca so to protect all the subdomains we only specify the URI and not full URI path that we want to block so it applies to subdomains under the apex domain.
 
-Now let's generate some traffic from the Canada region which prior to this worked on the top level domain and see the results.
+Now let's generate some traffic from the Canada region which prior to this worked and see the result.
 
 ![URI-Test-Block](Images/URI-Test-Block.png)
 
