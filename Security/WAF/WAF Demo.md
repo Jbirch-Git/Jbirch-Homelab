@@ -11,7 +11,7 @@ A WAF is protection for web applications through http/https and operates at Laye
 OWASP Top Ten description:  
 https://owasp.org/www-project-top-ten/
 
-WAF's themselves do not mask the identity of the site its intent is more like a firewall that sits infront of the web app you are protection very much like how Firewall's sit infront of critical infrastructure in a castle moat network architecture.
+WAF's themselves do not mask the identity of the site, its intent is more like a firewall that sits infront of the web app you are protection very much like how Firewalls sit infront of critical infrastructure in a castle moat network architecture.
 
 Let's dive into setting up WAF protection for web apps through CloudFlare.
 
@@ -42,7 +42,7 @@ Let's start with the Geo block. Hit Create Rule
 
 ![GEO-BLOCK](Images/GEO-BLOCK.png)
 
-Now if the country does not reside within canada or US the site will be blocked through cloudflare. This could also be created to have countries specified blocked if you wanted to allow most regions except for a select few to be blocked.
+Now if the country does not reside within canada or US the site will be blocked through cloudflare. This could also be created to have countries specifically blocked if you wanted to allow most regions except for a select few to be blocked.
 
 Let's test by generating site traffic inside and outside of Canada,US.
 
