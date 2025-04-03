@@ -46,10 +46,12 @@ Now if the country does not reside within canada or US the site will be blocked 
 
 Let's test by generating site traffic inside and outside of Canada,US.
 
+Inside Canada  
 ![Site-Test-S](Images/Site-Test-S.png)
 
 As we can see from within Canada the site works.
 
+Outside Canada  
 ![Site-Test-F](Images/Site-Test-F.png)
 
 From outside of Canada,US the site displays a block message. In this case from Germany.
