@@ -126,5 +126,5 @@ Success. This displays the use of continuous assessment to ensure that device ar
 
 This will bring us to our Network Security Pillar where we will dig into the traffic being sent to and from the endpoint onto our network inspecting the data as it flows inline. This will be done by utilizing TLS decryption.
 
-To Configure TLS decryption on the WARP client go to Settings > Network > TLS Decryption and enable TLS decryption. Following this we will have to ensure that the CA certificate from cloudflare is installed on each endpoint. This can be set to be done automatically Global Settings under Settings > WARP Client.
+To configure TLS decryption on the WARP client go to Settings > Network > TLS Decryption and enable TLS decryption. Following this we will have to ensure that the CA certificate from cloudflare is installed on each endpoint. This can be set to be done automatically Global Settings under Settings > WARP Client.
 
