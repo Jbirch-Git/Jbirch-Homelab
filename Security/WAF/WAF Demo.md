@@ -66,7 +66,7 @@ Now let's generate some traffic from the Canada region which prior to this worke
 
 ![URI-Test-Block](Images/URI-Test-Block.png)
 
-Success the connection to the test site was blocked.
+Success, the connection to the test site was blocked.
 
 We can also see in CloudFlare the related event.
 
