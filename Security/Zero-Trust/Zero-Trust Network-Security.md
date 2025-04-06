@@ -31,6 +31,8 @@ As we can see the file was downloaded onto my machine but then found by Defender
 
 Before we can test let's ensure to enable AV scanning on our WARP client in cloudflare. To do so go to Settings > Network > AV Inspection. Enable scan file upload and downloads.
 
+![Enable-AV](Images/Enable-AV.png) 
+
 Let's re-run a test on the same EICAR file.
 
 ![EICAR-Block](Images/EICAR-Block.png)  
