@@ -17,7 +17,7 @@ This is where TLS Decryption come into play. We are purposefully going to middle
 
 ![TLS-Comparison](Images/TLS-Comparison.png)
 
-We need to ensure that proper end user communication and updated business internet privacy policies are in place when TLS decryption is used for transparency on the increased visibility of end user traffic.
+We need to ensure that proper end user communication and updated internet privacy policies are in place when TLS decryption is used for transparency on the increased visibility of end user traffic.
 
 I will demonstrate TLS decryption using the EICAR test file which is a marked malicious file in most if not all AV databases. We will test what happens when this is downloaded with and without TLS Decryption.
 
@@ -27,7 +27,7 @@ Let's start with downloading the file without TLS decryption.
 
 ![EICAR-Defender](Images/EICAR-Defender.png)
 
-As we can see the file was downloaded but then found by Defender the EDR solution on the endpoint. We may think that Defender found the file and that this is great but remember that Defender may not have the signatures in its Database for this specific malicious code downloaded from our users. By the time the file is on the endpoint it's too late, we want to stop the file in transit which guarantees that the file never reached the endpoint allowing us to eliminate investigations about possible lateral movement or determining whether the payload activated or not. This is a key benefit to TLS decryption is stopping the payload in transit before it hits your network and Endpoint.
+As we can see the file was downloaded onto my machine but then found by Defender. We may think that because Defender found the file that we don't need TLS decryption we can just continue to rely on EDR but remember that Defender may not have the signatures in its database for that malware until days later. By the time the file is on the endpoint it's too late, we want to stop the file in transit which guarantees that the file never reached the endpoint allowing us to eliminate investigations about possible lateral movement or determining whether the payload activated or not. This is a key benefit to TLS decryption is stopping the payload in transit before it hits your network and Endpoint.
 
 Before we can test let's ensure to enable AV scanning on our WARP client in cloudflare. To do so go to Settings > Network > AV Inspection. Enable scan file upload and downloads.
 
