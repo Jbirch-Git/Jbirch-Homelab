@@ -27,7 +27,7 @@ Let's start with downloading the file without TLS decryption.
 
 ![EICAR-Defender](Images/EICAR-Defender.png)
 
-As we can see the file was downloaded onto my machine but then found by Defender. We may think that because Defender found the file that we don't need TLS decryption we can just continue to rely on EDR but remember that Defender may not have the signatures in its database for that malware until days later. By the time the file is on the endpoint it's too late, we want to stop the file in transit which guarantees that the file never reached the endpoint allowing us to eliminate investigations about possible lateral movement or determining whether the payload activated or not. This is a key benefit to TLS decryption is stopping the payload in transit before it hits your network and Endpoint.
+As we can see the file was downloaded onto my machine but then found by Defender. We may think that because Defender found the file that we don't need TLS decryption we can just continue to rely on EDR for detection but remember that Defender may not have the signatures in its database for that malware until days later. By the time the file is on the endpoint it's too late, we want to stop the file in transit which guarantees that the file never reached the endpoint allowing us to eliminate investigations about possible lateral movement or determining whether the payload activated or not. This is a key benefit to TLS decryption is stopping the payload in transit before it hits your network and Endpoint.
 
 Before we can test let's ensure to enable AV scanning on our WARP client in cloudflare. To do so go to Settings > Network > AV Inspection. Enable scan file upload and downloads.
 
