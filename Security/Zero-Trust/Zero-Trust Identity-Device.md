@@ -114,6 +114,8 @@ As we can see the posture has changed. By default for Cloudflare Device Posture 
 
 ![Firewall-Block](Images/Firewall-Block.png)
 
+We can see the related Block log in Cloudflare
+
 Let's add the file back and check the logs once again.
 
 ![Firewall-Allow](Images/Firewall-Allow.png)
