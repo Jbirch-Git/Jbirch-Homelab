@@ -62,10 +62,10 @@ As we can see we can send Credit Card information to a site and there is nothing
 
 Go to Zero-Trust > DLP > DLP Policies > Open the predefined Social Security as well as the Credit Card information policies
 
+We will enable the status of all the following social security numbers but this may not be needed if you are not managing data from certain locations. Additionally we set the match count to be greater than 0 so it will match any traffic which contains at least one social security number or more and the confidence level to Medium. Confidence level will need to be adjusted based on the false positive rate.
+
 ![DLP-Policy-Status](Images/DLP-Policy-Status.png)  
 ![DLP-Settings](Images/DLP-Settings.png)
-
-We will enable the status of all the following social security numbers but this may not be needed if you are not managing Data from certain locations. Additionally we set the match count to be greater than 0 so it will match any traffic which contains at least one social security number or more and the confidence level to Medium. This will need to be adjusted based on false positive rate.
 
 Next we go to Gateway > HTTP and create a new Firewall Policy.
 
