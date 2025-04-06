@@ -50,7 +50,7 @@ Staying within the network security pillar let's demonstrate another use case fo
 
 # Data Loss Prevention (DLP)
 
-Data Loss Prevention is exactly as it sounds. Its intent is by using TLS decryption we can see the data within the payload and can match this to known information databases like Credit Card information and Social Security Numbers and block traffic that matches or alert an administrator or compliance department.
+Data Loss Prevention is exactly as it sounds. Its intent is by using TLS decryption we can see the data within the payload and can match this to known information databases like Credit Card information and Social Security Numbers and block traffic or notify administration.
 
 By utilizing DLP we can ensure that data that is meant to remain private or within the business is not leaked to unwanted locations whether that be cloud storage, sending to third parties or even putting that data into an AI tool like chatgpt, copilot etc.
 
