@@ -15,7 +15,7 @@ We are going to be displaying the use of TLS Decryption also known as SSL inspec
 
 This is where TLS Decryption come into play. We are purposefully going to middle man the traffic of the end users allowing us to see within the payload and see what is being delivered to the end user. This is done by installing a trusted certificate on the endpoints once a connection request comes to the firewall it will present its internal certificate instead of the site certificate. The firewall then establishes a connection with the site and now that TLS is terminated on both ends the firewall can decrypt the site traffic and then re-encrypt the traffic forwarding it to the endpoint after inspection.
 
-![TLS-Comparison](Images/TLS-Comparison.png
+![TLS-Comparison](Images/TLS-Comparison.png)
 
 We need to ensure that proper end user communication and updated business internet privacy policies are in place when TLS decryption is used for transparency on the increased visibility of end user traffic.
 
