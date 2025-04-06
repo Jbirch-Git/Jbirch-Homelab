@@ -2,9 +2,9 @@
 
 Now that we went over Identity and Device Security in the prior demonstration we will now look at the Network Security Pillar and how this integrates into Zero-Trust. 
 
-In this Demonstration we will dive into the traffic being sent to and from the endpoint as well as the data within the payload. We will be utilizing TLS decryption to gain visibility and better policy enforcement on your endpoints.
+In this Demonstration we will dive into the traffic being sent to and from the endpoint as well as the data within the payload. We will be utilizing TLS decryption to gain visibility and apply policy enforcement on your endpoints.
 
-To configure TLS decryption on the WARP client go to Settings > Network > TLS Decryption and enable TLS decryption. Following this we will have to ensure that the CA certificate from cloudflare is installed on each endpoint. This can be set to be done automatically Global Settings under Settings > WARP Client.
+To configure TLS decryption on the WARP client go to Settings > Network > TLS Decryption and enable TLS decryption. Following this we will have to ensure that the CA certificate from cloudflare is installed on each endpoint. This can be set to be done automatically under Settings > WARP Client > Global Settings > Install CA Certificate
 
 ![TLS-Decryption](Images/TLS-Decryption.png)  
 ![Device-Certificate](Images/Device-Certificate.png)  
