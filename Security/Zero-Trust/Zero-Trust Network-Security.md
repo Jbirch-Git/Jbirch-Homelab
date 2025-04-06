@@ -58,9 +58,9 @@ First let's test sending a credit card number without any inspection.
 
 ![DLP-Success](Images/DLP-Success.png)
 
-As we can see we can send Credit Card information to a site and there is nothing stopping that data from leaving the network. Let's implement DLP to secure our data leaving the network.
+As we can see we can send Credit Card information to a site and there is nothing stopping that data from leaving the network. Let's implement DLP to secure the data leaving the network.
 
-Go to Zero-Trust > DLP > DLP Policies > Open the predefined Social Security and Insurance Policy.
+Go to Zero-Trust > DLP > DLP Policies > Open the predefined Social Security as well as the Credit Card information policies
 
 ![DLP-Policy-Status](Images/DLP-Policy-Status.png)  
 ![DLP-Settings](Images/DLP-Settings.png)
