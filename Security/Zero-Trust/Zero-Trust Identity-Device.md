@@ -1,16 +1,16 @@
 #  Home-Lab Zero Trust Setup
 
-I will be deploying Cloud Flares Zero Trust free tier solution to my homelab to display a simple Zero trust configuration as well as help quantify the differences between Zero Trust architecture vs traditional network architectures.
+I will be deploying Cloud Flares Zero Trust free tier solution to my Home-lab in a series of demonstrations to display a simple Zero trust configuration as well as help quantify the differences between Zero Trust architecture vs traditional network architectures. These Demonstrations will be split up in the different Pillars that make up Zero-Trust networking.
 
-The first step which is important for publishing DNS records that point public hostnames to internal applications is to have a public domain and set cloudflare are your DNS server through NS records.
+The first step which is important for publishing DNS records that point public hostnames to internal applications is to have a public domain and set Cloudflare are your DNS server through NS records.
 
 There is a step by step process that guides you through theses steps as you register your domain into Cloud Flare. Once completed you can see the NS servers under your domain > DNS > Records.
 
 ![NS-Record](Images/NS-Record.png)
 
-Once connected its time to deploy the "cloudflared" tunnel which is your application connector. This will be the broker for connections coming from public hostnames that you publish or routes defined to internal resources.
+Once connected its time to deploy the "Cloudflared" tunnel which is your application connector. This will be the broker for connections coming from public hostnames that you publish or routes defined to internal resources.
 
-To deploy this go to the Zero Trust portal in cloudflare under "Zero Trust"
+To deploy this go to the Zero Trust portal in Cloudflare under "Zero Trust"
 
 ![Zero-Trust-Portal](Images/Zero-Trust-Portal.png)
 
@@ -20,7 +20,7 @@ Next go to Networks > Tunnels > Create a tunnel
 
 Next you Select CloudFlared and Name your Tunnel
 
-We will now see the installation methods. You can choose to install the cloudflared connector on any OS you would like.
+We will now see the installation methods. You can choose to install the Cloudflared connector on any OS you would like.
 
 You then copy and paste the command shown which runs the installer with your specific Token to tie it to your Cloudflare tenant.
 
@@ -30,7 +30,7 @@ Your tunnel status should be showing HEALTHY.
 
 ![Tunnel-Health](Images/Tunnel-Health.png)
 
-To enable network access through the cloudflared tunnel using the WARP client you will create a Route as well as define the split tunnel configuration for the client. Let's configure that now.
+To enable network access through the Cloudflared tunnel using the WARP client you will create a Route as well as define the split tunnel configuration for the client. Let's configure that now.
 
 Create route:
 
@@ -46,7 +46,7 @@ Now that we have tunnel connectivity let's configure work on the first pillar of
 
 # Identity
 
-By default it will use your cloudflare account as well as a one time pin to authenticate your web portal access. Let's configure secondary IDP through Github but this can apply through any other OAuth provider.
+By default it will use your Cloudflare account as well as a one time pin to authenticate your web portal access. Let's configure secondary IDP through Github but this can apply through any other OAuth provider.
 
 ![OAuth-List](Images/OAuth-List.png)
 
@@ -82,7 +82,7 @@ As we can see the device posture checks have applied and are both in a true stat
 
 # Deploying an application through CloudFlare
 
-Next lets deploy an application through cloudflare.
+Next lets deploy an application through Cloudflare.
 
 Go to Access then applications. Create a new application and select Private Network.
 
@@ -120,11 +120,6 @@ Let's add the file back and check the logs once again.
 
 ![Firewall-Allow](Images/Firewall-Allow.png)
 
-Success. This displays the use of continuous assessment to ensure that device are compliant while accessing resources. Next we are going to look into the data that is being transmitted to and from the device to ensure nothing malicious or unwanted is flowing through our network as they access these defined applications.
+Success. This displays the use of continuous assessment to ensure that device are compliant while accessing resources. 
 
-# Network Security
-
-This will bring us to our Network Security Pillar where we will dig into the traffic being sent to and from the endpoint onto our network inspecting the data as it flows inline. This will be done by utilizing TLS decryption.
-
-To configure TLS decryption on the WARP client go to Settings > Network > TLS Decryption and enable TLS decryption. Following this we will have to ensure that the CA certificate from cloudflare is installed on each endpoint. This can be set to be done automatically Global Settings under Settings > WARP Client.
-
+In the Next Demonstration (Zero-Trust Network-Security) we will look at key features of policy enforcement and traffic inspection that make up the Network security pillar of Zero Trust.
