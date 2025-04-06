@@ -18,7 +18,7 @@ Next go to Networks > Tunnels > Create a tunnel
 
 ![Create-Tunnel](Images/Create-Tunnel.png)
 
-Next you Select CloudFlared and Name your Tunnel
+Next you Select CloudFlared and name your Tunnel
 
 We will now see the installation methods. You can choose to install the Cloudflared connector on any OS you would like.
 
@@ -64,7 +64,7 @@ Next let's look at Device Security another key pillar to our Zero Trust architec
 
 Device Security has many different variables, from EDR to patching but in this we are going to be looking at how Device Security is integrated into the Network Security pillar using Device Posture checks. This is part of endpoint continous assessment. if that status changes we can adjust how the network treats that device and its network flows.
 
-To configure Device Posture checks we are going to go to Settings > Warp Client > Device Posture and we add new.
+To configure Device Posture checks we are going to go to Settings > Warp Client > Device Posture. Then Add New
 
 Let's start with a simple Firewall check and enable it to validate whether the firewall on the endpoint is enabled. 
 
@@ -88,9 +88,7 @@ Go to Access then applications. Create a new application and select Private Netw
 
 ![Private-Network](Images/Private-Network.png)
 
-(Note) You would select Self-Hosted for a service that you have a Public DNS record pointing too that can be reached without the WARP client. Like browser access for a contractor.
-
-Configure the name in this case we will do access into the firewall.
+Configure the name, in this case we will do access into the firewall.
 
 Configure the Private IP or Hostname and port that its reachable by and configure the policy.
 
@@ -110,7 +108,7 @@ Now let's delete the testing file and check the device posture again.
 
 ![Posture-Change](Images/Posture-Change.png)
 
-As we can see the posture has changed. By default for Cloudflare Device Posture is evaluated at the start of the session creation. We will create a new session to the firewall and see if the traffic is passed. You will also have to play with the session lifetime for the application.
+As we can see the posture has changed. By default for Cloudflare Device Posture is evaluated at the start of the session creation. We will create a new session to the firewall and see if the traffic is passed. (Changes to Session lifespan will be needed depending on how quickly you want the network to react to the device posture change. Device Posture on Cloudflare is evaluated every 5 minutes)
 
 ![Connection-Closed](Images/Connection-Closed.png)
 
