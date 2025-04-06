@@ -1,14 +1,25 @@
 # Network Security
 
-This will bring us to our Network Security Pillar where we will dig into the traffic being sent to and from the endpoint onto our network inspecting the data as it flows inline. This will be done by utilizing TLS decryption.
+Now that we went over Identity and Device Security in the prior demonstration we will now look at the Network Security Pillar and how this integrates into Zero-Trust. 
+
+In this Demonstration we will dive into the traffic being sent to and from the endpoint as well as the data within the payload. We will be utilizing TLS decryption to gain visibility and better policy enforcement on your endpoints.
 
 To configure TLS decryption on the WARP client go to Settings > Network > TLS Decryption and enable TLS decryption. Following this we will have to ensure that the CA certificate from cloudflare is installed on each endpoint. This can be set to be done automatically Global Settings under Settings > WARP Client.
 
-We are going to be displaying the use of TLS Decryption also known as SSL inspection on some internet based traffic. Most modern sites will utilize HTTPS traffic which encrypts the payload data using TLS. This increases security and confidentiality between the end user and the site that there is no one in the middle of the site capturing their data. From a business perspective this has become a modern issue where threat actors will hide malicious code delivered over https that way firewalls could only see the source and destination and not what is within the payload being delivered from the site.
+![TLS-Decryption](Images/TLS-Decryption.png)  
+![Device-Certificate](Images/Device-Certificate.png)  
 
-This is where SSL inspection come into play. We are purposefully going to become the middle man of the end users traffic allowing us to see within the payload and see what is being delivered to the end user. This needs to be done in confluence with notification to users that this is happened to ensure there is no breach of privacy and clear understanding that traffic flowing through a managed device where SSL inspection is in use will allow administration to see what they are sending and receiving over these network connections.
+# TLS Decryption
 
-I will demonstrate this using the EICAR test file which is a known site that allows you to test download a marked malicious file in most if not all AV databases. We will test what happens when this is downloaded with and without TLS Decryption.
+We are going to be displaying the use of TLS Decryption also known as SSL inspection on some internet based traffic. Most modern sites will utilize HTTPS traffic which encrypts the payload data using TLS. This increases security and confidentiality between the end user and the site. From a business perspective this has become a modern issue as without TLS Decryption we lose visibility of what is being sent between the endpoint and the site and subsequently we can't secure what we can't see.
+
+This is where TLS Decryption come into play. We are purposefully going to middle man the traffic of the end users allowing us to see within the payload and see what is being delivered to the end user. This is done by installing a trusted certificate on the endpoints once a connection request comes to the firewall it will present its internal certificate instead of the site certificate. The firewall then establishes a connection with the site and now that TLS is terminated on both ends the firewall can decrypt the site traffic and then re-encrypt the traffic forwarding it to the endpoint after inspection.
+
+![TLS-Comparison](Images/TLS-Comparison.png
+
+We need to ensure that proper end user communication and updated business internet privacy policies are in place when TLS decryption is used for transparency on the increased visibility of end user traffic.
+
+I will demonstrate TLS decryption using the EICAR test file which is a marked malicious file in most if not all AV databases. We will test what happens when this is downloaded with and without TLS Decryption.
 
 ![EICAR-SITE](Images/EICAR-SITE.png)
 
