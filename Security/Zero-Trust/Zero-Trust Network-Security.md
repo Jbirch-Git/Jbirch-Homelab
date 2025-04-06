@@ -1,4 +1,4 @@
-# Network Security
+#  Home-Lab Zero Trust Series - Network Security
 
 Now that we went over Identity and Device Security in the prior demonstration we will now look at the Network Security Pillar and how this integrates into Zero-Trust. 
 
@@ -82,3 +82,5 @@ As we can see the post was blocked as it matched the DLP profile we configured s
 ![DLP-Log](Images/DLP-Log.png)
 
 We can see the related log in the Cloudflare portal to which we could create an alert or action item to a compliance department within the business.
+
+In my next demonstration il be deploying applications through Cloudflare with public hostnames to display browser based application access to eliminate unsecure VPN for contractors.

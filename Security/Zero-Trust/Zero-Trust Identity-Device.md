@@ -1,4 +1,4 @@
-#  Home-Lab Zero Trust Setup
+#  Home-Lab Zero Trust Series - Identity and Device
 
 I will be deploying Cloud Flares Zero Trust free tier solution to my Home-lab in a series of demonstrations to display a simple Zero trust configuration as well as help quantify the differences between Zero Trust architecture vs traditional network architectures. These Demonstrations will be split up in the different Pillars that make up Zero-Trust networking.
 
