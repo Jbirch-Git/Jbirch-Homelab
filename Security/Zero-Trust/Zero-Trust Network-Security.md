@@ -38,7 +38,7 @@ Let's re-run a test on the same EICAR file.
 ![EICAR-Block](Images/EICAR-Block.png)  
 ![EICAR-Block2](Images/EICAR-Block2.png)
 
-As we can see the EICAR file was blocked by Cloudflare and in the browser the file never downloaded. This means we can say with 100% confidence the file never made it to the workstation so no further investigation is needed to determine payload execution or lateral movement.
+As we can see the EICAR file was blocked by Cloudflare. From the perspective of the browser the file was never downloaded, this means we can say with 100% confidence the file never made it to the workstation through the network eliminating the possibility of execution, detection evasion and lateral movement that could have occurred if the file reached the endpoint.
 
 ![EICAR-LOG](Images/EICAR-LOG.png)
 
