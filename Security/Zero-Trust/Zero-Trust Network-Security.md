@@ -54,11 +54,11 @@ Data Loss Prevention is exactly as it sounds. Its intent is by using TLS decrypt
 
 By utilizing DLP we can ensure that data that is meant to remain private or within the business is not leaked to unwanted locations whether that be cloud storage, sending to third parties or even putting that data into a public AI model.
 
-First let's test sending a credit card number within any inspection.
+First let's test sending a credit card number without any inspection.
 
 ![DLP-Success](Images/DLP-Success.png)
 
-As we can see we can send a Credit Card number to a site for example filling in a form and there is nothing stopping that data from leaving the network. Let's implement DLP to secure our data leaving the network.
+As we can see we can send Credit Card information to a site and there is nothing stopping that data from leaving the network. Let's implement DLP to secure our data leaving the network.
 
 Go to Zero-Trust > DLP > DLP Policies > Open the predefined Social Security and Insurance Policy.
 
