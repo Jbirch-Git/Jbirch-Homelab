@@ -12,7 +12,7 @@ Once connected its time to deploy the "Cloudflared" tunnel which is your applica
 
 To deploy this go to the Zero Trust portal in Cloudflare under "Zero Trust"
 
-
+![Zero-Trust-Portal](Images/Zero-Trust-Portal.png)
 
 Next go to Networks > Tunnels > Create a tunnel
 
