@@ -110,7 +110,7 @@ Now let's delete the testing file and check the device posture again.
 
 As we can see the posture has changed. By default for Cloudflare Device Posture is evaluated at the start of the session creation. We will create a new session to the firewall and see if the traffic is passed. (Changes to Session lifespan will be needed depending on how quickly you want the network to react to the device posture change. Device Posture on Cloudflare is evaluated every 5 minutes)
 
-![Connection-Closed](Images/Connection-Closed.png)
+
 
 ![Firewall-Block](Images/Firewall-Block.png)
 
