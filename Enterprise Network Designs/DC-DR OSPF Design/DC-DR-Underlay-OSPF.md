@@ -3,7 +3,7 @@
 In this lab I will be demonstrating a DC-DR design concept that interconnects two central datacenters to each other as well as down to a branch network in a hub and spoke topology. These datacenters will connect up to a provider using EBGP which would represent a B2B connection for connected services but could also represent redundant internet providers.
 
 Assets in this lab:  
-C-R1,C-R2,A-R1,A-R2,SW1,Branch
+C-R1, C-R2, A-R1, A-R2, SW1, Branch
 
 Topology for this demonstration:
 
