@@ -168,6 +168,8 @@ The route is in the routing table which means we have a fully converged network.
 
 DC/DR underlay Failure: In this failure we expect the traffic from R2 which was destine for R1 to travel over the MPLS network as the L2 underlay is no longer available.
 
+Pre-Failover Routing Table:
+
 ![A-R2-Pre-Failure](Images/A-R2-Pre-Failure.png)
 
 This is the routing table which shows traffic should flow over the L2 underlay from R2 going to R1. Let's disable the Underlay and see how traffic is affected.
@@ -177,6 +179,8 @@ This is the routing table which shows traffic should flow over the L2 underlay f
 As you can see the network is now available through the .19 network which is the neighborship over the MPLS network. Let's re-enable the link and move onto the next failover scenario.
 
 DC MPLS Failure: In this failure we expect multiple changes to occur. The default route will change to flow the DR, To reach DC networks it will flow to DR then over the underlay, to reach the B2B connections it will flow over DR then the underlay then out.
+
+Pre-Failover Routing Table:
 
 ![Branch-Pre-MPLS-Failure](Images/Branch-Pre-MPLS-Failure.png)
 
@@ -193,6 +197,8 @@ As we can see the branch will send its default route traffic, B2B and DC network
 As we can see the B2B and DC networks indicate to flow over the underlay. The final scenario we will demo is a failure of the EBGP neighbor.
 
 EBGP Failure: In this failure we expect branch to B2B traffic to flow to DR and out its own connection. As well DR sourced traffic should flow direct over its own EBGP neighborships.
+
+Pre-Failover Routing Table:
 
 ![Branch-Pre-EBGP-Failure](Images/Branch-Pre-MPLS-Failure.png)
 
