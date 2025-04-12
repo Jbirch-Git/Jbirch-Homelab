@@ -158,7 +158,7 @@ redistribute ospf 1
 
 Let's take a look at the C-R1 routing table now
 
-(Note): Since this is a demo we did not utilize route map filtering but in a production environment Route-Maps are essentials for both inbound and outbound on EBGP connections as these are not explicite trust relationships so we want to ensure that if a missconfigured route is advertised that its blocked by our route-map as it was not implicitly defined within our route-map as a network we expected to receive from the business.
+(Note): Since this is a demo we did not utilize route map filtering but in a production environment Route-maps are essentials for both inbound and outbound on EBGP connections as these are not explicit trust relationships so we want to ensure that if a missconfigured route is advertised that its blocked by our route-map as it was not implicitly defined within our route-map as a network we expected to receive from the business.
 
 ![C-R1-Branch-Route](Images/C-R1-Branch-Route.png)
 
@@ -186,9 +186,9 @@ Let's disable the DC MPLS connection now.
 
 ![Branch-Trace-MPLS-Failure](Images/Branch-Trace-MPLS-Failure.png)
 
-As we can see the branch will send its default route traffic,B2B and DC network traffic to DR. This is displayed in the traceroute to the B2B network. Let's look at R2 to confirm this flow.
+As we can see the branch will send its default route traffic, B2B and DC network traffic to DR. This is displayed in the traceroute to the B2B network. Let's look at R2 to confirm this flow.
 
-![R2-Post-MPLS-Failure](Images/Branch-Post-MPLS-Failure.png)
+![R2-Post-MPLS-Failure](Images/R2-Post-MPLS-Failure.png)
 
 As we can see the B2B and DC networks indicate to flow over the underlay. The final scenario we will demo is a failure of the EBGP neighbor.
 
