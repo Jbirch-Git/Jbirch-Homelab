@@ -1,6 +1,6 @@
 #  Home-Lab Zero Trust Series - Identity and Device
 
-I will be deploying Cloud Flares Zero Trust free tier solution to my Home-lab in a series of demonstrations to display a simple Zero trust configuration as well as help quantify the differences between Zero Trust architecture vs traditional network architectures. These Demonstrations will be split up in the different Pillars that make up Zero-Trust networking.
+I will be deploying Cloud Flares Zero Trust free tier solution to my Home-lab in a series of demonstrations to display the differences between Zero Trust frameworks vs traditional network frameworks. These Demonstrations will be split up in the different Pillars that make up Zero-Trust networking.
 
 The first step which is important for publishing DNS records that point public hostnames to internal applications is to have a public domain and set Cloudflare are your DNS server through NS records.
 
