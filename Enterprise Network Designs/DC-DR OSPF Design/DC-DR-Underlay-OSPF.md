@@ -97,13 +97,13 @@ Let's take a look at the branch routing table.
 
 # OSPF Cost adjustments
 
-One of the objectives outlined is that we want to have DC to DR traffic flow through the Underlay primarily and through the MPLS network only upon failure. Since both interfaces connecting direct and to MPLS have the same cost these routes are now ECMP.
+One of the objectives outlined is that we want to have DC to DR traffic flow through the Underlay primarily and through the MPLS network only upon failure. Since both connections between DC/DR have the same cost these routes are now ECMP.
 
 ![A-R1-ECMP](Images/A-R1-ECMP.png)
 
-This is not what we want as it will attempt to load balance traffic over both links. Let's adjust the cost on both R1 and R2 so that the cost associated with egressing that interface is only 5.
+This is not what we want as it will attempt to load balance traffic over both links. Let's adjust the cost on both R1 and R2 so that the cost associated with egressing the underlay interface is only 5.
 
-A-R1/2
+A-R1/2:  
 int e0/1  
 ip ospf cost 5  
 
@@ -117,7 +117,7 @@ Next we need to redistribute routes over BGP as well as into OSPF.
 
 # BGP and OSPF redistribution
 
-Next we want to advertise the BGP learned networks into OSPF as we cannot rely on the default route alone as this will not reconverge if a failure between DC and the B2B provider occur. If we redistribute the specific routes and a failure occur then DR will advertise the B2B routes while default route traffic can continue to flow through DC.
+We want to advertise the BGP learned networks into OSPF as we cannot rely on the default route alone as this will not reconverge if a failure between DC and the B2B provider occur. If we redistribute the specific routes and a failure occur then DR will advertise the B2B routes while default route traffic can continue to flow through DC.
 
 We will apply these changes on A-R1 and R2.
 
@@ -131,7 +131,7 @@ redistribute bgp 65540 subnets metric 200
 
 Let's take a look at the branch routing table now.
 
-![Branch-EBGP-Routes](Images/Branch-OSPF-Routes.png)
+![Branch-EBGP-Routes](Images/Branch-EBGP-Routes.png)
 
 We can see the branch router now has routes to the B2B provider advertised through R1 with a metric of 100. We will display all the failover scenarios at the end of the demo.
 
