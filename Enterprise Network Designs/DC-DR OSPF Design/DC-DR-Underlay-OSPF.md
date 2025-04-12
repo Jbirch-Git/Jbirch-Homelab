@@ -214,8 +214,8 @@ R2:
 
 ![R2-Post-EBGP-Failure](Images/R2-Post-EBGP-Failure.png)
 
-As we can see from the branch perspective to reach the DC specific networks as well as default route till flow to DC but the B2B networks will flow to DR. From DR's perspective since we increased the AD originally for EBGP learned routes after routes re-converged it now prefers going out its own established EBGP neighbor with C-R2.
+As we can see from the branch perspective to reach the DC specific networks as well as default route to flow to DC but the B2B networks will flow to DR. From DR's perspective since we increased the AD originally for EBGP learned routes after routes re-converged it now prefers going out its own established EBGP neighbor with C-R2.
 
 # End
-This has been a demo of an enterprise network design which includes DC/DR as well as branch networks that connect upstream or east/west to another business providing services over their networks. We built this with multiple routing protocols to meet the needs of an agile network that will re-converge without any administrative intervention providing high levels of redundancy.
+This has been a demo of an enterprise network design which includes DC/DR as well as branch networks that connect upstream to another business providing services over their networks. We built this with multiple routing protocols to meet the needs of an agile network that will re-converge without any administrative intervention providing high levels of redundancy.
 
