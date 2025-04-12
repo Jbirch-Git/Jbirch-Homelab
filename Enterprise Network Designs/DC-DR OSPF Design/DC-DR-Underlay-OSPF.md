@@ -49,7 +49,7 @@ network 10.16.3.0 mask 255.255.255.0
 network 10.16.4.0 mask 255.255.255.0  
 distance bgp 115 200 200  
 
-We have set the EBGP route distance to be 115 which we will see how this comes into play later after configuring OSPF on both the DC/DR routers. Let's take a look at the routing tables on the A-R1 router to ensure that the B2B EBGP sourced routes are in the routing table.
+On R2 we have set the EBGP route distance to be 115 which we will see how this comes into play later after configuring OSPF on both the DC/DR routers. Let's take a look at the routing tables on the A-R1 router to ensure that the B2B EBGP sourced routes are in the routing table.
 
 ![A-R1-EBGP-Routes](Images/A-R1-EBGP-Routes.png)
 
@@ -61,10 +61,10 @@ Let's now dive into the OSPF configuration. We have two main connections the dir
 
 Due to the complexity let's outline the objectives we want to acheive for the various traffic flows.
 
--We want DC to advertise a default route to the branch router and DR should also advertise a default route but at a higher cost.
--Branch to our EBGP routes we want to flow to DC and out. If there is a failure we want it to flow to DR then through the underlay to DC unless EBGP is broken at the DC site to avoid asymetric routing.
--Branch to DC/DR networks should flow direct over each neighborship and if that neighborship is broken to go direct it would go to the alternative neighbor and through the underlay. Same for reverse traffic flows.
--DC to DR and vise versa should go direct over the L2 unless that neighborship is down then it will go over the MPLS network.
+-We want DC to advertise a default route to the branch router and DR should also advertise a default route but at a higher cost.  
+-Branch to our EBGP routes we want to flow to DC and out. If there is a failure we want it to flow to DR then through the underlay to DC unless EBGP is broken at the DC site to avoid asymetric routing.  
+-Branch to DC/DR networks should flow direct over each neighborship and if that neighborship is broken to go direct it would go to the alternative neighbor and through the underlay. Same for reverse traffic flows.  
+-DC to DR and vise versa should go direct over the L2 unless that neighborship is down then it will go over the MPLS network.  
 
 First let's start with the basic OSPF configuration.
 
