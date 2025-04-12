@@ -202,11 +202,15 @@ Pre-Failover Routing Table:
 
 ![Branch-Pre-EBGP-Failure](Images/Branch-Pre-MPLS-Failure.png)
 
+R2:
+
 ![R2-Pre-EBGP-Failure](Images/R2-Pre-EBGP-Failure.png)
 
 Let's now bring the EBGP neighbor routes down from the provider and see how this affects the branch and DR routing tables. (BGP is much slower to converge so this may take around 30 seconds before we see routes converge)
 
 ![Branch-Post-EBGP-Failure](Images/Branch-Post-MPLS-Failure.png)
+
+R2:
 
 ![R2-Post-EBGP-Failure](Images/R2-Post-EBGP-Failure.png)
 
