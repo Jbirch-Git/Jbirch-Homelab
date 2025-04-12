@@ -71,7 +71,7 @@ First let's start with the basic OSPF configuration.
 DC:  
 router ospf 1  
 router-id 1.1.1.1  
-redistribute static metric 1 
+redistribute static metric 1  
 network 172.16.0.8 0.0.0.3 area 0  
 network 172.19.0.0 0.0.0.255 area 0  
 default-information originate always metric 100  
