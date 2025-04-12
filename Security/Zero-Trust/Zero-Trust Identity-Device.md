@@ -62,7 +62,7 @@ Next let's look at Device Security another key pillar to our Zero Trust architec
 
 # Device Security
 
-Device Security has many different variables, from EDR to patching but in this we are going to be looking at how Device Security is integrated into the Network Security pillar using Device Posture checks. This is part of endpoint continous assessment. if that status changes we can adjust how the network treats that device and its network flows.
+Device Security has many different variables, from EDR to patching but in this we are going to be looking at how Device Security is integrated into the Network Security pillar using Device Posture checks. This is part of endpoint continuous assessment. if that status changes we can adjust how the network treats that device and its network flows.
 
 To configure Device Posture checks we are going to go to Settings > Warp Client > Device Posture. Then Add New
 
