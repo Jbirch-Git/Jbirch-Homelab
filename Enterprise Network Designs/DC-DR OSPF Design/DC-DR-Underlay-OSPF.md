@@ -59,7 +59,7 @@ As we can see we can see the routes are installed in the routing table and sourc
 
 Let's now dive into the OSPF configuration. We have two main connections the direct from DC/DR which would be represented by an EPL or L2 line between datacenters as well as the switched connection which could represent a branch MPLS connection. This could be done similarily with IPSEC but in those configurations its normally best to work with IBGP.
 
-Due to the complexity let's outline the objectives we want to acheive for the various traffic flows.
+Due to the complexity let's outline the objectives we want to achieve for the various traffic flows.
 
 -We want DC to advertise a default route to the branch router and DR should also advertise a default route but at a higher cost.  
 -Branch to our EBGP routes we want to flow to DC and out. If there is a failure we want it to flow to DR then through the underlay to DC unless EBGP is broken at the DC site to avoid asymetric routing.  
