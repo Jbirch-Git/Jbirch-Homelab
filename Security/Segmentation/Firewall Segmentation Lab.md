@@ -94,4 +94,4 @@ With our latest policy in place we re-run the ping to the User-PC.
 
 Voila, ICMP is responsive being sourced in either direction. With this in mind we might not want the server network to source traffic to the user network or perhaps we only want to allow certain traffic like HTTP/HTTPS from the user network and not more sensitive protocols like RDP. This is the added benefit we have with ROAS and VLAN segmentation with firewalls, we can be flexible on our allow rule and blocks.
 
-That is all for this brief demo on VLAN segmentation with firewalls to better understand how to segment L3 boundries using a firewall and switch configuration. This concept expands much further as we begin to generate additional VLAN's and Zones for different asset types like DMZ resources or Crown Jewel resources.
+That is all for our brief demo on VLAN segmentation with firewalls to better understand how to segment L3 boundries using a firewall and switch configuration. This concept expands much further as we begin to generate additional VLAN's and Zones for different asset types like DMZ resources or Crown Jewel resources.
