@@ -70,6 +70,8 @@ Server IP Address:
 Ping Attempt from User-PC to Server:  
 ![Ping-Failed](Images/Ping-Failed.png)
 
+# Firewall Policy
+
 As we can see the ping failed. Let's now configure a firewall policy to enable traffic to flow over these two zones. The firewall policy we have configured is a policy in the direction of the User-PC to the server to enable ICMP messages. If the server was a Web Host we would potentially enable services like HTTP and HTTPS but for this demo ICMP will suffice.
 
 ![Firewall-Policy](Images/Firewall-Policy.png)
