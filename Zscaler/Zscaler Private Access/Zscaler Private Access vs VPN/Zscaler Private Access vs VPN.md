@@ -19,7 +19,6 @@ This architecture brings a lot of pain points forward that we can look to solve.
 1: Public Address exposure  
 2: Implicit Network trust  
 3: Complex Policy and Network Administration  
-4: Overly Permissive Client VPN  
 
 How can we improve these pain point and what is the result from going through this change. Let's get into the technical nitty gritty for each and expose what true Zero Trust enlightenment brings.
 
@@ -36,6 +35,34 @@ If we look at the new Architecture above we have a key distinction. Remote users
 By removing VPN concentrators we no longer have public address exposure at the DC, Cloud or at the branch for end user connectivity. The application is requested by the device and the Zero Trust Exchange determines which app connector can reach the application to complete the connection and is then stitches to the Datacenter that the user is connected through.
 
 # Implicit Network trust
+
+Implicit network trust is a fundamental flaw in today's network access structure. This made sense when there were clear definitions of the walls surrounding the companies applications but falls short when trying to build a zero trust architecture. If we think about how vlan segmentation was setup just a few years ago we always talked about user to server or user to dmz level policies.
+
+In today's configurations is to open. We can no longer trust that a device on the network is not a threat. We need additional context and controls, this is where ZPA steps in.
+
+First, we pull in device context. Identity, Posture, location, device type. All of these additional pieces of context help to determine the state that we want the user and device to be in when accessing our applications.
+
+Zscaler Private Access facilitates access direct to applications and not network level access. This obfuscation of the underlying network hinders the ability to move laterally during the discovery state of the killchain. Let's talk about the techniques behind this.
+
+1: Obfuscation of DNS resolution to the client.
+
+Zscaler Private Access employs DNS obfuscation at the time of resolution when we have a defined application that the user can access. The DNS name will always resolve into the 100.64.0.0/16 synthetic host pool range and eliminates the ability for a malicious attacker or program to discover the underlying server network through the DNS response.
+
+![DNS-obfuscation](Images/DNS-obfuscation.png)
+
+This added control removes the network from the equation and ensures we are only connecting users to applications. 
+
+2: Removing Inter-VLAN Connectivity
+
+Now that we have the Zscaler architecture in place we no longer require the user networks to connect to the servers. We use the Zero Trust Exchange and the app connector to facilitate user to application access. We can now begin to disconnect the traditional implicit trust network model for our user networks.
+
+There is a key advantage when we do this. User networks used to be a liability, the potential that someone could connect to your corporate SSID or User network and move laterally throughout the network. We can now remove policies that facilitate connectivity for user vlan's to server vlan's. What happens when an attacker physically attempts to breach by using a stolen PSK. They can access the internet, maybe check out a facebook post or two but they can't directly reach the servers that they want.
+
+This reduces our cost and dependencies on NAC solutions and for certain businesses eliminates the requirement for this at all.
+
+3: Imploying additional context
+
+Access is no longer based on if the user is in the office, so our policies and network access can no longer follow that model. Being able to employ policies that follow the user and their identity are both critical to removing implicit network trust but also rolls into easing administration and policy control which we will get into later.
 
 
 
